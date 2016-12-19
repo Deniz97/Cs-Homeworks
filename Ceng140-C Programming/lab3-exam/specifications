@@ -1,0 +1,338 @@
+Lab Exam 03 Section 2
+
+Type of work: Individual work
+--------------------------------------------------------------------------------
+
+- CENG-140 C PROGRAMMING - SPRING 2015                                         
+
+- LABORATORY EXAM 3                                                            
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+- INTRODUCTION                                                                 
+
+--------------------------------------------------------------------------------
+
+In this lab, you are going to implement several string processing/manipulation
+
+functions, most of which are avaiable in languages such as Java, Python, PHP. 
+
+They are not directly available in C but functions provided inside "string.h"
+
+will be really useful for you; try to exploit standard library functions as
+
+much as possible. 
+
+Start your code by including a header named "lab3.h" as follows:
+
+#include "lab3.h"
+
+As was the case for the second in-lab exam, you are not going to define a "main"
+
+function. Instead, you should define a function named "execute" which will be 
+
+called when you execute your program. In short, "execute" is your "main" function 
+
+in the lab exam. 
+
+void execute();
+
+In your file, you are going to implement several functions whose 
+
+prototypes are present in the header file "lab3.h". Each of these functions are 
+
+explained in detail later in this document.
+
+Warning: You need to provide empty definitions for all the functions even if you
+
+do not want them to be graded. Otherwise, compiler gives an "undefined reference"
+
+error. For instance, here follows an empty definition for execute:
+
+void execute()
+
+{
+
+/* code placed here will be executed when you click the "Execute" button */
+
+}
+
+************************************************************************************
+
+******************************  IMPORTANT  ***********************************
+
+You are not allowed to import any library (except for "lab3.h" ofcourse).
+
+
+
+You are not allowed to use static defined arrays. Instead you will get the memory
+
+by using "malloc", "calloc", and "realloc".
+
+
+
+About memory usage: You are not allowed to allocate more space than is actually 
+
+required. You may use "realloc" to claim space one-by-one (or by chunks of 10) 
+
+if required. However, you are not supposed to allocate a very large space and 
+
+then decrease the size with "realloc". You are allowed to reduce the size of a 
+
+memory area at most *50* bytes. 
+
+
+
+In the lab system, each call to "malloc", "calloc" and "realloc" will be 
+
+automatically investigated to check for extra memory usage. Therefore, you *MAY
+
+NOT GET A GRADE* from a function if your memory usage is not validated. 
+
+
+
+There are some function that may be helpful during the lab exam:
+
+isdigit(), 
+
+isupper(), 
+
+islower(), 
+
+toupper(), 
+
+tolower(),
+
+strlength().
+
+You can directly call them without any library importing. 
+
+******************************************************************************
+
+******************************************************************************
+
+--------------------------------------------------------------------------------
+
+- LAB WORK                                                                     
+
+--------------------------------------------------------------------------------
+
+Note: Although C does not have a "string" data type, we will refer to character
+
+arrays as strings in the rest of this document. 
+
+--------------------------------------------------------------------------------
+
+(All other functions can be much more easier with this function)
+
+1. char* customstrncpy(char *src, size_t n);
+
+This function copies the string pointed by src to the buffer pointed
+
+by dest at most n bytes of src. Remember to insert '\0' character into the end of
+
+copied string. 
+
+Sample Code:
+
+---------------
+
+void execute()
+
+{
+
+char* text = "To be or not to be";
+
+char* result = customstrncpy(text, strlength(text)+1);
+
+printf("%s", result);
+
+}
+
+Output:
+
+---------------
+
+To be or not to be
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+2. char* eliminateDigits(char* string); 
+
+This function returns a copy of the string with all digits (numerical characters) 
+
+eliminated. e.g. eliminateDigits("ceng140 - 2011 Spring") returns "ceng -  Spring"
+
+
+
+Hint: "ctype.h" contains a function named "isdigit()"
+
+Note: This function must not modify the original string
+
+Sample Code:
+
+---------------
+
+void execute()
+
+{
+
+char* text = "Testing CEng140 Labcode";
+
+char* result = eliminateDigits(text);
+
+printf("'%s'", result);
+
+free(result);
+
+}
+
+Output:
+
+---------------
+
+'Testing CEng Labcode'
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+3. char* strip(char* string, char* characters); 
+
+This function returns  a copy of the string with leading and trailing characters, 
+
+which are stored in "characters", removed. e.g. strip("-__-ceng_140---__,,","_-,") 
+
+returns "ceng_140"
+
+
+
+Note: This function must not modify the original string. 
+
+Sample Code:
+
+---------------
+
+void execute()
+
+{
+
+char* text = "--___,,Testing_CEng-140,   Labcode,,,--";
+
+char* result = strip(text, "_-,");
+
+printf("'%s'", result);
+
+free(result);
+
+}
+
+Output:
+
+---------------
+
+'Testing_CEng-140,   Labcode'
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+4. char* convertCamelCase(char* string1); 
+
+This function returns a string after finding "_" characters and delete it. Also the character after "_" 
+
+should be converted to uppercase version. If no "_" character has found on the input, return original string.
+
+
+
+e.g. convertCamelCase("third_in_lab_exam") returns: "thirdInLabExam" 
+
+e.g. convertCamelCase("third in lab exam") returns: "third in lab exam" 
+
+
+
+Note: This function must not modify the original string. 
+
+Sample Code:
+
+---------------
+
+void execute()
+
+{
+
+char* text = "testing_ceng_labcode";
+
+char* result = convertCamelCase(text);
+
+printf("'%s'\n", result);
+
+free(result);
+
+}
+
+Output:
+
+---------------
+
+'testingCengLabcode'
+
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+
+5. char* twoDjoin(char** list, char delim); 
+
+This function joins a character pointer array using a delimiter.
+
+e.g.
+
+char** list = malloc(sizeof(char*)*3);
+
+list[0] = "ceng140";
+
+list[1] = "ceng111";
+
+list[2] = NULL;
+
+join(list, '|') returns "ceng140|ceng111"
+
+
+
+Note: This function must not modify the original string. 
+
+Sample Code:
+
+---------------
+
+void execute()
+
+{
+
+char* result;
+
+char** list = malloc(sizeof(char*)*4);
+
+list[0] = "Testing";
+
+list[1] = "CEng140";
+
+list[2] = "Labcode";
+
+list[3] = NULL;
+
+result = twoDjoin(list, '-');
+
+printf("'%s'", result);
+
+}
+
+Output:
+
+---------------
+
+'Testing-CEng140-Labcode'

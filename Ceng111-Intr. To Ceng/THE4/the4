@@ -1,0 +1,138 @@
+def help_michael(t,s):
+
+	#function for creating copies of nested list
+	#because apprently python sucks
+	def deep_copy(nested_content):
+		if not isinstance(nested_content,list):
+			return nested_content
+		else:
+			holder = []
+			for sub_content in nested_content:
+			    holder.append(deep_copy(sub_content))
+			return holder
+
+	#total cost to run the bussiness, usually negative, for a given tree
+	def total_cost(t):
+		sum = 0
+		if len(t)==1:
+			return t[0][1]-t[0][2]
+		for i in t[1:]:
+			sum += total_cost(i)
+		return sum + ( t[0][1]-t[0][2] )
+	
+	#assigning rp to tree members
+	def assing_rp(t,rp=0):
+		t[0].append(rp)
+
+		for i in range(1,len(t)):
+			t[i] = assing_rp(t[i],rp+1)
+		return t
+
+	#store the information of posible wage reduction targets
+	def wage_cucks(t):
+		
+		if len(t)==1:
+			if t[0][1]<t[0][2] and t[0][3]>1:
+				return [t[0]]
+		bom = []
+		for i in t[1:]:
+			bom += wage_cucks(i)
+		
+		if t[0][1]<t[0][2] and t[0][3]>1:
+			return [t[0]]+bom
+		return bom
+
+	def subsets(my_set):
+		result = [[]]
+		for x in my_set:
+			result = result + [y + [x] for y in result]
+		return result
+
+    #reduce the wage for given person combination
+	def replacement(t,c): #tree,combination
+
+		if t[0] in c:
+			t[0][2] -= t[0][3]*100
+		
+		for i in range(1,len(t)):
+			t[i] = replacement(t[i],c)
+
+		return t
+
+	def cuck_sort(l):
+		#print "LLLLLLL= ",l
+		if len(l)==1:
+			return l
+		max_value = 0
+		max_person = l[0]
+		index = 0	
+
+		for i in range(len(l)):
+			a = l[i][3]*100 if l[i][2] > l[i][3]*100 else l[i][2]-1 
+
+			if a>max_value:
+				max_value = l[i][3]
+				max_person = l[i][:]
+				index = i
+		l.pop(index)
+		return [max_person]+cuck_sort(l)
+
+
+
+
+	
+	#actual function body
+	t = assing_rp(t)
+	
+	#the option that mike's money is enough of itself
+	current_cost = total_cost(t)
+	if s >= abs(current_cost) or current_cost>0:
+		return "Yes"
+
+	#the possible option
+	
+	cucks = wage_cucks(t)
+	if len(cucks) > 0:	
+		#print "cucks= ",cucks
+		cucks = cuck_sort(cucks)
+		#print "sorted cucks= ",cucks
+		org_cucks = deep_copy(cucks)
+		amount_to_reduce = abs(total_cost(t)) - s
+		
+		
+		i=0
+		while amount_to_reduce>0 and i<len(cucks):
+			#print "amount to reduce= ",amount_to_reduce
+			reduced_wage = 0
+			while amount_to_reduce>0 and reduced_wage<cucks[i][3]*100:
+				reduced_wage += 1
+				amount_to_reduce -= 1
+				cucks[i][2] -= 1
+			i+=1
+		if amount_to_reduce == 0:
+			result = ["Possible"]
+			for i in range(len(cucks)):
+				if cucks[i] != org_cucks[i]:
+					result = result +[[cucks[i][0],cucks[i][2]]]
+			return result
+
+
+
+	#nop option
+	return "No"
+
+
+
+
+
+
+
+
+
+
+
+
+# print help_michael([["Michael", 0, 10000], \
+# [ ["Jack", 6000, 5000], [["Fredo", 600, 1000]], [["Vincenzo", 600, 500]] ],\
+# [["Frank", 2000, 4000], [["Rocco", 100, 500]]],\
+# [["John", 2000, 4000], [["Nico", 1000, 300]]]],12600)

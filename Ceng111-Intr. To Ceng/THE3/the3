@@ -1,0 +1,162 @@
+#includes some matrix operations
+
+
+def mateval(lst):
+
+	def gcd(a, b):
+
+		while b != 0:
+			(a,b) = (b, a % b)
+		return a
+
+	def simplifier(lst):
+
+		cd = gcd(lst[0],lst[1]) 
+		return [ lst[0]/cd, lst[1]/cd  ]
+
+
+
+	def sumit(a,b):
+
+		if type(a) == list and type(b)== list:
+
+			return simplifier( [ a[0]*b[1] + b[0]*a[1], a[1]*b[1] ] )
+
+		elif type(a) == list:
+
+			return simplifier([ a[1]*b + a[0], a[1]  ])
+
+		elif type(b) == list:
+
+			return simplifier([ b[1]*a + b[0], b[1]  ])
+
+		else:
+			return a+b
+
+	def multit(a,b):
+
+		if type(a) == list and type(b)== list:
+
+			return simplifier([ a[0]*b[0], a[1]*b[1] ])
+
+		elif type(a) == list:
+
+			return simplifier([ a[0]*b, a[1] ])
+		
+		elif type(b) == list:	
+
+			return simplifier([ b[0]*a, b[1] ])
+
+		else:
+			return a*b
+
+	def subit(a,b):
+
+		if type(a) == list and type(b)== list:
+
+			return simplifier( [ a[0]*b[1] - b[0]*a[1], a[1]*b[1] ] )
+
+		elif type(a) == list:
+
+			return simplifier([ a[0] - a[1]*b, a[1]  ])
+
+		elif type(b) == list:
+
+			return simplifier([ b[1]*a - b[0], b[1]  ])
+
+		else:
+			return a-b
+
+	def matsum(x,y):
+
+		if ( type(x) == int or ( type(x)==list and type(x[0]) == int ) ) and ( type(y) == int or (type(y)==list and type(y[0])  == int) ):
+
+			return sumit(x,y)
+
+		else:
+			result = [ [ 0 for bim in xrange(len(x[0])) ] for bom in xrange(len(x))]
+
+			for i in range(len(x)):
+	 
+				for j in range(len(x[0])):
+				
+					result[i][j] = sumit(x[i][j],y[i][j])
+
+	    	return result
+
+
+	def matsub(x,y):
+
+		if ( type(x) == int or ( type(x)==list and type(x[0]) == int ) ) and ( type(y) == int or (type(y)==list and type(y[0])  == int) ):
+
+			return subit(x,y)
+
+		else:
+			result = [ [ 0 for bim in xrange(len(x[0])) ] for bom in xrange(len(x))]
+
+			for i in range(len(x)):
+	 
+	  			for j in range(len(x[0])):
+	    		
+					result[i][j] = subit(x[i][j],y[i][j])
+
+	    	return result
+
+
+	def matmult(x,y):
+
+		#x integer y matrix
+		if ( type(x) == int or ( type(x)==list and type(x[0]) == int ) ) and not ( type(y) == int or (type(y)==list and type(y[0])  == int) ):
+
+			for i in range(len(y)):
+				for j in range(len(y[i])):
+					y[i][j] = multit(y[i][j],x)
+			return y
+		
+		#y integer x matrix
+		elif not ( type(x) == int or ( type(x)==list and type(x[0]) == int ) ) and ( type(y) == int or (type(y)==list and type(y[0])  == int) ):
+
+			for i in range(len(x)):
+				for j in range(len(x[i])):
+					x[i][j] = multit(x[i][j],y)
+			return x
+		
+		#both integer
+		elif ( type(x) == int or ( type(x)==list and type(x[0]) == int ) ) and ( type(y) == int or (type(y)==list and type(y[0])  == int) ):
+
+			return multit(x,y)
+		
+		#both matrix
+		else:
+			
+			#defining the result matrix
+			result = [ [ [] for bim in xrange(len(y[0])) ] for bom in xrange( len(x) ) ]
+			for i in range(len(result)):
+				for j in range(len(result[0])):
+					result[i][j] = 0
+			#multiplating it	
+			for i in range(len(x)):
+		   
+				for j in range(len(y[0])):
+		       
+					for k in range(len(y)):
+						result[i][j] = sumit( result[i][j], multit(x[i][k],y[k][j]) )
+			return result
+
+
+	
+	#actual function body
+	for i in range(1,len(lst)):
+		if type(lst[i])==list and type(lst[i][0]) == str:
+			lst[i] = mateval(lst[i])
+		
+	if lst[0]=="+":
+		return reduce(matsum,lst[1:])
+	elif lst[0]=="-":
+		return matsub(lst[1],lst[2])
+	elif lst[0]=="*":
+		return reduce(matmult,lst[1:])
+
+
+
+print mateval(["+",["*",["-",1,[1,3]],[[2,[-1,2]],[[7,3],5]],[[-8,[-1,2],[3,25]],[[7,3],[1,5],[-9,23]]]],[[2,3,-1],[[1,2],[1,3],-1]]])

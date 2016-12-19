@@ -1,0 +1,189 @@
+from math import *
+
+def physics(lan):
+	ml = lan[::]
+	#quadrical solver
+	def quad_solve(a,b,c):
+		delta = b**2-4*a*c
+		if delta>0:
+			x1 = (-b+sqrt(delta))/(2*a)
+			x2 = ((-b+sqrt(delta))/(2*a))
+			if x1>0 and x2>0:
+				return min(x1,x2)
+			elif x1>=0:
+				return x1
+			elif x2>=0:
+				return x2
+			else:
+				#print "ROOT LOGIC ERROR"
+				return 0
+		else:
+			#print "MATH DOMAIN ERROR"
+			return 0
+		
+		
+
+	#define the main variables
+	ang1=ml[0]
+	ang2=ml[1]
+	d=ml[2]
+	sfric=ml[3]
+	kfric=ml[4]
+	s=ml[5]
+	m1=ml[6]
+	m2=ml[7]
+	t1=ml[8]
+	t2=ml[9] + ml[8]
+	#print "sfric= ",sfric," kfric= ",kfric
+	#some usefull abrevations
+	g = 9.8
+	ang1 = radians(ang1)
+	ang2 = radians(ang2)
+	f1g = m1*sin(ang1)
+	f2g = m2*sin(ang2)
+	f1f = sfric*m1*cos(ang1)
+	f2f = sfric*m2*cos(ang2)
+	f1fk = kfric*m1*cos(ang1)
+	f2fk = kfric*m2*cos(ang2)
+	
+
+	#the inclined surfaces' length
+	d1 = d*sin(ang2) / sin(pi-ang1-ang2)
+	d2 = d*sin(ang1) / sin(pi-ang1-ang2)
+
+	#print "d1= ",d1
+	#print "d2= ",d2
+	
+	#defining the mighty x1 and x2
+	x1 = d1-s/2-0.1
+	x2 = d2-s/2-0.1
+	#print "x1= ",x1
+	#print "x2= ",x2
+
+	#now lets make ifs happen
+	if abs(f1g-f2g) <= abs(f1f+f2f): 
+		#print "sh*t is stabil"
+		t = t2 - t1
+		if f1g>f1f:
+			#print "x1 moves"
+			a = g*sin(ang1) - g*kfric*cos(ang1) 
+			x1 = x1 - ( (0.5) * a * (t*t) )
+		
+
+		if f2g>f2f:
+			#print "x2 moves"
+			a = g*sin(ang2) - g*kfric*cos(ang2)
+			x2 = x2 - ( (0.5) * a * (t*t) )
+			
+
+		if x1<=0:
+			x1=0
+		if x2<=0:
+			x2=0
+		
+		return [x1,x2]
+
+
+	elif f1g-f2g > f1f - f2f: #shit goes to m1
+	 	#print "Sh*t goes to m1"
+	 	checker = 0
+	 	#first analyze 0 to t1
+	 	a = g*(f1g-f2g-f1fk-f2fk)/(m1+m2)
+	 	t=t1
+	 	x1 = x1 - (0.5)*a*(t*t)
+	 	x2 = x2 + (0.5)*a*(t*t)
+	 	v1 = a*t1
+	 	v2 = a*t1
+
+	 	if x2 >= (d2-0.1): #m2 hits the pulley
+	 		#print "x2 hits the pulley before t1"
+	 		x2=d2-0.1
+	 		x1=d1-s-0.1
+	 		checker = 1
+	 		v1 = 0
+	 		v2 = 0
+	 	#print "x1= ",x1," x2= ",x2," before t1"
+	 	
+	 	
+	 	#now t1 to t2
+	 	t=t2-t1
+
+	 	#for x1
+	 	t=t2-t1
+	 	a1 = (g*sin(ang1)-g*kfric*cos(ang1))
+	 	x1 = x1 - v1*t - (0.5)*a1*(t*t)
+
+	 	if x1<=0: #x1 hits 0 before t2
+	 		#print "x1 hits ground before t2"
+	 		x1=0
+	 	
+	 	#for x2
+
+		a2 = (g*sin(ang2)+g*kfric*cos(ang2))
+		t_temp = v2 / a2
+		m = v2*t_temp - (0.5)*a2*(t_temp*t_temp)
+		
+		if checker == 1: #x2 starts from pulley
+		 	#print "x2 starts from pulley"
+		 	if f2g*g > f2f*g:
+		 		a2=(g*sin(ang2)-g*kfric*cos(ang2))
+		 		x2 = x2 - (0.5)*a2*(t*t)
+
+
+		elif m < d2 - x2 - 0.1: #x2 doesnt hit the pulley before t2
+			#print "x2 doesnt hit the pulley before t2"
+			t = t - t_temp
+			x2 = x2 + m
+			a2 = (g*sin(ang2)-g*kfric*cos(ang2))
+			if f2g*g > f2f*g :
+				x2 = x2 - (0.5)*a2*(t*t)
+		 		
+
+
+		elif m >= d2-x2-0.1: #x2 hits the pulley before t2
+		 	#print "x2 hits the pulley before t2"
+		 	distance_left = d2 - x2 - 0.1
+		 	a2=(g*sin(ang2)-g*kfric*cos(ang2))
+		 	root = quad_solve(-a2/2,v2,-distance_left)
+		 	t = t - root 
+		 	
+		 	#print "root= ",root	 		
+		 	
+		 	x2 = d2 - 0.1
+		 	if f2g*g > f2f*g:
+		 		x2 = x2- (0.5)*a2*(t*t)
+
+		
+		if x2<=0:
+				x2 = 0
+
+
+	 	#for x1
+	 	t=t2-t1
+	 	a1 = (g*sin(ang1)-g*kfric*cos(ang1))
+	 	x1 = x1 - v1*t - (0.5)*a1*(t*t)
+
+	 	if x1<=0: #x1 hits 0 before t2
+	 		#print "x1 hits ground before t2"
+	 		x1=0
+
+	 	return [x1,x2]
+
+	#last option
+	elif f2g - f1g > f1f + f2f:
+		#print "sh*t goes to m2"
+		temp = ml[0]
+		ml[0] = ml[1]
+		ml[1] = temp
+		temp = ml[6]
+		ml[6] = ml[7]
+		ml[7] = temp
+		
+		ans = physics(ml)[::-1]
+		return ans
+
+
+	
+	else : 
+		#print "i dont think that was possible"
+		return [-1,-1] 
