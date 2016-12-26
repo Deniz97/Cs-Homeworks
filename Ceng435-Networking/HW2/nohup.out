@@ -1,0 +1,20 @@
+
+(process:1588): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(process:16213): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(process:10723): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(nautilus:630): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(nautilus:630): Gtk-WARNING **: Failed to get the GNOME session proxy: The name org.gnome.SessionManager is not owned
+
+(nautilus:630): Gtk-WARNING **: Failed to get the Xfce session proxy: The name org.xfce.SessionManager is not owned
+
+(nautilus:630): Gtk-WARNING **: Failed to get an inhibit portal proxy: The name org.freedesktop.portal.Desktop is not owned
+
+** (nautilus:630): WARNING **: Unable to get contents of the bookmarks file: Error opening file /home/duboy/.gtk-bookmarks: No such file or directory
