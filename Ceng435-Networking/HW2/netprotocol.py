@@ -3,12 +3,14 @@ import fcntl
 import struct
 import array
 
+#returns the available interface ip address in an array
 def findInterfaces():
     def formatIp(addr):
         return str(ord(addr[0])) + '.' + \
                str(ord(addr[1])) + '.' + \
                str(ord(addr[2])) + '.' + \
                str(ord(addr[3]))
+
     max_possible = 128  # arbitrary. raise if needed.
     bytes = max_possible * 32
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -26,6 +28,33 @@ def findInterfaces():
         #lst.append((name, ip))
         lst.append( formatIp(ip) )
     return lst
+
+
+def makePacket(source_ip,dest_ip,seq_num,data,): #ASISTANA SOR AND DEST IP GEREKLI MI DIYE SOR
+    packet = return source_ip + "/" + dest_ip + "/" + str(seq_num) + "/" + str(data)
+    checksum = makeChecksum(packet)
+    return source_ip + "/" + dest_ip + "/" + str(seq_num) + "/"+str(checksum)+"/" + str(data)
+
+def getSourceIp(packet):
+    return packet.split("/")[0]
+
+def getDestinationIp(packet):
+    return packet.split("/")[1]
+
+def getSeqNum(packet):
+    return int(packet.split("/")[2])
+
+def getData(packet):
+    return packet.split("/")[4]
+
+def makeChecksum(packet):
+    return reduce(lambda x,y:x+y, map(ord, st)) % 256
+
+
+def notCorrupt(packet):,
+    array = packet.split("/")
+    return makeChecksum( array[0]+array[1]+array[2]+array[4] ) ^ int(array[3]) == 0
+
 
 
 

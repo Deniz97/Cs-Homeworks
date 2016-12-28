@@ -18,3 +18,6 @@
 (nautilus:630): Gtk-WARNING **: Failed to get an inhibit portal proxy: The name org.freedesktop.portal.Desktop is not owned
 
 ** (nautilus:630): WARNING **: Unable to get contents of the bookmarks file: Error opening file /home/duboy/.gtk-bookmarks: No such file or directory
+
+(process:5229): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
