@@ -30,7 +30,7 @@ def findInterfaces():
     return lst
 
 
-def makePacket(source_ip,dest_ip,seq_num,data,): #ASISTANA SOR AND DEST IP GEREKLI MI DIYE SOR
+def makePacket(source_ip,dest_ip,seq_num,data,): #ASISTANA SOURCE AND DEST IP GEREKLI MI DIYE SOR
     packet = return source_ip + "/" + dest_ip + "/" + str(seq_num) + "/" + str(data)
     checksum = makeChecksum(packet)
     return source_ip + "/" + dest_ip + "/" + str(seq_num) + "/"+str(checksum)+"/" + str(data)
@@ -53,7 +53,7 @@ def makeChecksum(packet):
 
 def notCorrupt(packet):,
     array = packet.split("/")
-    return makeChecksum( array[0]+array[1]+array[2]+array[4] ) ^ int(array[3]) == 0
+    return makeChecksum( array[0]+"/"+array[1]+"/"+array[2]+"/"+array[4] ) ^ int(array[3]) == 0
 
 
 

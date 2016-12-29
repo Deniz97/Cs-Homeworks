@@ -5,9 +5,6 @@ import os
 import threading
 import Queue
 
-def computeDestIp(ip):
-	"""TODO: WRITE THIS"""
-
 if not os.path.isfile("./input.txt"):
 	print "Could not locate the file, exiting."
 	exit()
@@ -16,6 +13,10 @@ try :
 except Exception:
 	print "Could not open file input.txt"
 
+def computeDestIp(ip):
+	retval=ip
+	retval[7]=str(int(ip[7])+3) 
+	return retval
 
 
 # Create new threads
@@ -35,6 +36,11 @@ while  to_push!="":
 	que_array[j].put(to_push)
 	j=(j+1)%i
 	to_push=input_file.read(900)
+	if(to_push==""):
+		j=0
+		while(j<i):
+			que_array[j].put("break")
+		break
 	
 j=0
 while(j<i):
