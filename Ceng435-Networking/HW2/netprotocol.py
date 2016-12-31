@@ -11,7 +11,7 @@ def findInterfaces():
                str(ord(addr[2])) + '.' + \
                str(ord(addr[3]))
 
-    max_possible = 128  # arbitrary. raise if needed.
+    max_possible = 1280  # arbitrary. raise if needed.
     bytes = max_possible * 32
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     names = array.array('B', '\0' * bytes)
@@ -25,35 +25,36 @@ def findInterfaces():
     for i in range(0, outbytes, 40):
         name = namestr[i:i+16].split('\0', 1)[0]
         ip   = namestr[i+20:i+24]
-        #lst.append((name, ip))
-        lst.append( formatIp(ip) )
+
+        if(formatIp(ip)[:2]=="10"):
+            lst.append( formatIp(ip) )
     return lst
 
 
 def makePacket(source_ip,dest_ip,seq_num,data,): #ASISTANA SOURCE AND DEST IP GEREKLI MI DIYE SOR
-    packet = return source_ip + "/" + dest_ip + "/" + str(seq_num) + "/" + str(data)
+    packet = source_ip+ "/" + dest_ip + "/" + str(seq_num) + "/" + str(data)
     checksum = makeChecksum(packet)
-    return source_ip + "/" + dest_ip + "/" + str(seq_num) + "/"+str(checksum)+"/" + str(data)
+    return str(checksum)+"/"+source_ip + "/" + dest_ip + "/" + str(seq_num) + "/" + str(data)
 
 def getSourceIp(packet):
-    return packet.split("/")[0]
-
-def getDestinationIp(packet):
     return packet.split("/")[1]
 
+def getDestinationIp(packet):
+    return packet.split("/")[2]
+
 def getSeqNum(packet):
-    return int(packet.split("/")[2])
+    return int(packet.split("/")[3])
 
 def getData(packet):
     return packet.split("/")[4]
 
 def makeChecksum(packet):
-    return reduce(lambda x,y:x+y, map(ord, st)) % 256
+    return reduce(lambda x,y:x+y, map(ord, packet)) % 256
 
 
-def notCorrupt(packet):,
-    array = packet.split("/")
-    return makeChecksum( array[0]+"/"+array[1]+"/"+array[2]+"/"+array[4] ) ^ int(array[3]) == 0
+def notCorrupt(packet):
+    index = packet.find("/")
+    return makeChecksum( packet[index+1:]    ) ^ int(packet[:index]) == 0
 
 
 
