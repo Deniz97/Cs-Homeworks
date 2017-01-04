@@ -4,12 +4,12 @@ from netprotocol import *
 import threading
 import Queue
 from server_thread import *
+import time
 
 
-def compDestIp(ip):
+def compDestIp(ip,numberOfInterfaces):
 	retval=ip
-	retval=ip[:6]+str(int(ip[6])-3) +ip[7:]
-	print "RETVAL= "+str(retval)
+	retval=ip[:6]+str(int(ip[6])-numberOfInterfaces) +ip[7:]
 	return retval
 
 #Open a file to write delay values in to
@@ -24,13 +24,15 @@ except Exception:
 
 # Create new threads
 interface_ip_array = findInterfaces()
+interface_ip_array.sort()
+numberOfInterfaces = len(interface_ip_array)
 print interface_ip_array
 thread_array = []
 que_array = []
 i=0
-while i<len(interface_ip_array) :
-	que_array.append( Queue.Queue(6000/len(interface_ip_array))  )
-	my_thread=MainReciever("Threadd-"+str(i),interface_ip_array[i],compDestIp(interface_ip_array[i]),3000+i,que_array[i]  )
+while i<numberOfInterfaces :
+	que_array.append( Queue.Queue(6000/numberOfInterfaces)  )
+	my_thread=MainReciever("Threadd-"+str(i),interface_ip_array[i],compDestIp(interface_ip_array[i],numberOfInterfaces),3000+i,que_array[i]  )
 	my_thread.start()
 	thread_array.append(my_thread)
 	i=i+1
@@ -45,11 +47,15 @@ while(control< (2**i)-1 ) :
 		control= control | (1<<j)
 		j=(j+1)%i
 		continue
+	
 	j=(j+1)%i
-	print "writing to file "
-	output_file.write(to_write)
+	output_file.write( to_write )
 	
 
 for t in thread_array:
 	t.join()
+
+output_file.close()
+
+print time.time()
    	
