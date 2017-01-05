@@ -3,6 +3,7 @@ import os
 from netprotocol import *
 import threading
 import Queue
+import time
 
 
 class MainSender(threading.Thread):
@@ -46,17 +47,26 @@ class MainSender(threading.Thread):
         curr_dup_acks=0
         thread_name=self.thread_name
 
-        def timeout(packet_array,window_base,dest_ip,dest_port):        
-            
-            print "From "+thread_name+" TIMER SENDING= "
-            print str(getSeqNum(packet_array[window_base[0]+1]))
+        def timeout(thread_name, packet_array,window_base,dest_ip,dest_port):
             sock = socket.socket(socket.AF_INET, # Internet
                                                 socket.SOCK_DGRAM) # UDP
-            sock.sendto( packet_array[window_base[0]+1] ,(dest_ip,dest_port) ) 
+            
+            
+            while(1):
+                curr_base= window_base[0]
+                time.sleep(0.1)
+                if(curr_base==window_base[0]):
+                    sock.sendto( packet_array[window_base[0]+1] ,(dest_ip,dest_port) ) 
+                    print "TIMER SEND from "+str(thread_name)+ " "+str(getSeqNum( packet_array[ window_base[0]+1 ] ))
+
+
             sock.close()
 
-        timer_function = threading.Timer(1,timeout,args= [self.packet_array,self.window_base,self.dest_ip,self.dest_port] )
-        
+
+        timer_function = threading.Thread()
+        timer_function = threading.Thread(target=timeout, args = [self.thread_name, self.packet_array,self.window_base,self.dest_ip,self.dest_port] )
+        timer_function.daemon = True
+        timer_function.start()
 
         def reciever():
 
@@ -71,17 +81,13 @@ class MainSender(threading.Thread):
             sock.bind((ip,port))
             
             while(1):
-                debug= "From "+thread_name+" "
                 ack_packet, addr = sock.recvfrom(1024)
-                debug+= " From " + str(thread_name) +"got ack for= "+str(getSeqNum(ack_packet))+" "
+                debug= " From " + str(thread_name) +"got ack for= "+str(getSeqNum(ack_packet))+" "
                 if(notCorrupt(ack_packet)):
                     debug+= " Not Corrupt,  "
                     if(getData(ack_packet)=="break"):
-                        try:
-                            debug+= " got break exiting "
-                            timer_function.cancel()
-                        except Exception:
-                            debug+=""
+                        debug+= " got break exiting "
+
                         print debug
                         break
 
@@ -97,30 +103,14 @@ class MainSender(threading.Thread):
                     debug+= "  succesfull cumulative ack,  "
                     self.window_base[0]=ack_num
                     last_ack_num=ack_num
-                    if(last_ack_num<next_seq_num-1): #if there are any unacked packets start timer
-                        debug+= "  starting timer,  "
-                        
-                        try:
-                            timer_function.cancel()
-                            timer_function.start()
-                            debug += "Timer started, "
-                        except Exception:
-                            debug+= "Timer already running, "
-                        
+                    
                     #duplicate ack
                 elif(ack_num==last_ack_num):
                     curr_dup_acks+=1
                     debug+="  duplicate ack no. "+str(curr_dup_acks)+"  "
 
-                    try:
-                        timer_function.cancel()
-                        timer_function.start()
-                        debug += "Timer started, "
-                    except Exception:
-                        debug+= "Timer already running, "
-                        
                     if(curr_dup_acks==3):
-                        debug+= " SENDING " +str(self.packet_array[last_ack_num+1])
+                        debug+= " SENDING " +str(getSeqNum(self.packet_array[last_ack_num+1]))
                         curr_dup_acks=0
                         sock.sendto(self.packet_array[last_ack_num+1] , (dest_ip,dest_port)) #packet_to_transmit is always last_ack_num+1(th) packet(also the windows base)                    
                 print
@@ -142,21 +132,14 @@ class MainSender(threading.Thread):
                 
                 self.sock.sendto(sending_packet, (dest_ip, dest_port))
 
-                s_debug += "sended " + str(getSeqNum(sending_packet)) + ", "
                 self.packet_array[next_seq_num]=sending_packet        
-
-                try:
-                    timer_function.start()
-                    s_debug += "started timer, "
-                except Exception:
-                    s_debug += "timer already running, "
 
                 next_seq_num+=1
                 
                 if(data=="break"):
                     s_debug += " GOT BREAK "
                     break
-                print s_debug
+                #print s_debug
             if(data=="break"):
                 break
         print s_debug

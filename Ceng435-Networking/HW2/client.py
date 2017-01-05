@@ -52,6 +52,7 @@ while  to_push!="" and j<i:
 
 for t in thread_array:
 	t.join()
+	print t.thread_name+" JOINED"
 input_file.close()
 
 print time_stamp

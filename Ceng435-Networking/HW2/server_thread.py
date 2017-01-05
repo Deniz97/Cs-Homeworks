@@ -61,7 +61,7 @@ class MainReciever(threading.Thread):
         expected_seq_num=0
         buffer_que=Queue.PriorityQueue(3000)
         out_of_order_array=[]
-        last_send_ack=0
+        last_send_ack=-1
 
         while(expected_seq_num<ending_seq_num):
             debug=""
@@ -69,7 +69,6 @@ class MainReciever(threading.Thread):
             
             incoming_packet, addr = self.sock.recvfrom(1024)
             
-            debug+= " Exp seq num = " + str(expected_seq_num)
             debug+= " From "+ self.thread_name+"= "+str(getSeqNum(incoming_packet)) 
             debug+=" IS NOT CORRUPT= " + str(notCorrupt(incoming_packet))
             
@@ -79,7 +78,7 @@ class MainReciever(threading.Thread):
                 recieved_ack=getSeqNum(incoming_packet)
                 
                 if(recieved_ack==expected_seq_num): #in-order packet
-                    debug+= " IN ORDER PACKET"
+                    debug+= " IN ORDER PACKET "
                     
                     i=isContigious(out_of_order_array,expected_seq_num)
                     
@@ -89,7 +88,7 @@ class MainReciever(threading.Thread):
                     
                     out_of_order_array=out_of_order_array[i:]
                     last_send_ack=recieved_ack+i
-                    debug+= "IN THE SENDER " + " SENDING= "+makePacket(ip,dest_ip,last_send_ack,"ACK")+ " TO  "+str(dest_ip)+" "+str(dest_port)
+                    debug+= "IN THE SENDER " + " SENDING= "+makePacket(ip,dest_ip,last_send_ack,"ACK")
                     
                     threading.Thread(target=Sender, args = (self.sock,last_send_ack,ip,dest_ip,dest_port )).start() #send ack
                     expected_seq_num+=1+i
@@ -100,6 +99,7 @@ class MainReciever(threading.Thread):
                         i-=1
                     
                     if(recieved_data=="break"):
+                        debug+=" GOT BREAK "
                         ending_seq_num = recieved_ack
 
                     debug+= " EXP SEQ NUM= "+str(expected_seq_num)+" LAST SEND ACK= "+str(last_send_ack)
@@ -108,27 +108,31 @@ class MainReciever(threading.Thread):
                     debug+= " OUT OF ORDER, "
                     if(recieved_ack in out_of_order_array):
                         debug += "CONTINUEING "
-                        print debug
+                        #print debug
                         continue
                     out_of_order_array = ekle(out_of_order_array, recieved_ack)
                     debug+= "out_array= "+str(out_of_order_array)+", "
                     buffer_que.put((recieved_ack, recieved_data))
-                    debug+= "IN THE SENDER " + " SENDING= "+makePacket(ip,dest_ip,last_send_ack,"ACK")+ " TO  "+str(dest_ip)+" "+str(dest_port)
+                    debug+= "IN THE SENDER " + " SENDING= "+makePacket(ip,dest_ip,last_send_ack,"ACK")
                     threading.Thread(target=Sender, args = (self.sock,last_send_ack,ip,dest_ip,dest_port )).start() #send duplicate ack
-
+                
+                #elif(recieved_ack<expected_seq_num): #duplicate packet, last send ack
+                    #debug += "  Duplicate packet "
+                    #threading.Thread(target=Sender, args = (self.sock,last_send_ack,ip,dest_ip,dest_port )).start() #send duplicate ack
 
 
                     if(recieved_data=="break"):
+                        debug+=" GOT BREAK "
                         ending_seq_num = recieved_ack
 
                     
             else: #corrupt packet, send duplicate ack
-                debug+= "IN THE SENDER " + " SENDING= "+makePacket(ip,dest_ip,last_send_ack,"ACK")+ " TO  "+str(dest_ip)+" "+str(dest_port)
+                debug+= "IN THE SENDER " + " SENDING= "+makePacket(ip,dest_ip,last_send_ack,"ACK")
                 threading.Thread(target=Sender, args = (self.sock,last_send_ack,ip,dest_ip,dest_port )).start()
             
-            print ""
-            print debug
-            print ""
+            #print ""
+            #print debug
+            #print ""
         print "FROM "+thread_name+" SENDING BREAK"
         sending_packet = makePacket(ip,dest_ip,last_send_ack,"break")
         self.sock.sendto(sending_packet,(dest_ip,dest_port))

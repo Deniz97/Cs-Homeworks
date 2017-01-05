@@ -54,6 +54,7 @@ while(control< (2**i)-1 ) :
 
 for t in thread_array:
 	t.join()
+	print t.thread_name+" JOINED"
 
 output_file.close()
 
