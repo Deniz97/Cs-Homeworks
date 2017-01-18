@@ -1,0 +1,99 @@
+Homework 2
+In this homework, you are expected to implement a packet based "Reliable Data Transfer" (RDT) protocol of your own (not same as RDT 3.0 or etc. in the text book and literature) that supports multi-homing. You are also expected to change your network configuration, in detail, you should modify the routing table of the switch nodes called sw1, sw2, etc, which are hosts like source and destination. In bonus part, you are asked to measure and evaluate the performance of your own protocol according to the file transfer times (FTT) among different topologies. Note that your protocol should be implemented by considering your approach and design. You will concentrate on topologies connecting two hosts (s, d) over disjoint paths. The source will be the host "s" and the destination will be the host "d". The topologies that you should use, depicted in Figure 1, Figure 2 and Figure 3 named as Topology 1, Topology 2, and, Topology 3 respectively. 
+
+1- Topology
+The following topologies will be deployed:
+
+Figure 1: Topology 1 (Notice that you have only one interface on two nodes)
+
+
+
+Figure 2: Topology  2 (Notice that you have two interfaces on two nodes)
+
+
+
+Figure 3: Topology 3 (Notice that you have three interfaces on two nodes)
+
+
+
+2. Network Configuration
+You should be familiar with the IPv4 addressing and routing mechanism. You have a source and a destination node in each topology. The others nodes (i.e., switches) should forward the packets to the next hop. You have already done this work by implementing an application in the first assignment, however you are now expected to make this configuration by modifying routing table, namely, routing will be in the network level. Please look at the "route" command for the details, and IPV4 routing mechanism implemented in the kernel.
+
+For Instance:
+
+Consider topology 1; when a packet comes to sw1 from s (source), sw1 will forward the packet to the destination. Otherwise, if a control packet (ACK/NACK) comes from d (destination) to sw1, sw1 will forward the signal to s (source).  
+
+For the clarification:
+
+If you need to change the routing table depending on your protocol design, interface usage, IP usage etc., then use route command for this purpose. We will use different interfaces that is why we need some routing table modification operations. However, at least use the route command to show and explain your routing tables that they will successfully make the routing from source to destination. Your protocol should bind the socket to a specific interface. Then, The routing will be provided with the routing table and  Any of the remaining and design issue is up to you. Do not worry about the evaluation part of the network configuration, since if you provide these expectations you will not lose your points.
+
+For this homework;
+
+You don't use any application for routing in the switches since they will route the packets to the destination with the routing mechanism.
+
+Moreover, you can give directly the destination IP address as a parameter to your source application. So, you can run your scripts only in the source and destination side. You have two terminals for running your codes one of them is source side and the other one is the destination side.
+
+3. Specifications
+Develop your reliable transport protocol that supports multi-homing  by using UDP sockets. The following figure shows the stack.
+Develop  a packet-based protocol.
+You can use any programming language to implement your code. 
+Exploit disjoint links at the same time.
+Your source will send a large file (exactly 5 MBytes) to the destination. You can also access the input file under the Homework 2 Files on the COW.
+The file will be protected with a checksum in the assessment. In other words, The input file at the source side, and the transmitted file at the destination side should be exactly the same. 
+Design your packet structure that will go into the UDP payload. The maximum packet sizes of your RDT protocol (header + payload) can be at most 1000 bytes.
+Notice that, your protocol should be reusable for any topology or any network configuration based bandwidth, delay and packet size. Show these details in your codes with your comments.  
+Your codes must be executed your source code on host s, and your destination code on host d. Any application for the switches will not be accepted. The aim of the Switches is that they just route the packet to the destination and source by means of using routing mechanism (ipv4 forwarding and routing table, not applications).  
+Run your source code on host s, and your destination code on host d: You are expected to produce two figures by changing the link properties by using "tc" command. You will change the loss property of the links. 
+For the usage of 'tc' command: [ http://lartc.org/manpages/tc.txt ] [ https://wiki.linuxfoundation.org/networking/netem ]
+
+
+
+You are expected to plot two charts:
+x-axis: topology number (1, 2, 3), y-axis: file transfer time with 95% confidence intervals. Keep the bandwidth and the delay the same and set the loss as 1% for the/all links between source and switches. Notice that initial configurations should also be applied explained below.
+x-axis: packet loss percentage (0.1%, %1, %5), y-axis: file transfer time with 95% confidence intervals. Keep the bandwidth and the delay the same. Packet loss will be changed between source side and switches, namely the left side, the lost for others will be zero. In this figure: The results of your RDT protocols should be represented as a line chart. You are expected to draw this figure based on only the results gained from Topology 3. Notice that initial configurations should also be applied explained below. 
+In Bonus Part:
+
+You will obtain the results consisting of FTT (File Transfer Times) for the Topology 1 and Topology 3. Then calculate the ratio of Time for Topology 3 and Time for Topology 1.
+
+ Some Initial Configurations:
+
+In the reservation process,you should set the bandwidth by using the manage resources plane on GENI Portal. Click links and set the bandwidth as 100000 kbps for all links. 
+Delay will be 1ms for all links. Use relevant tc/netem command.
+In the source side, please use the command lines below link by considering the tc/netem command usage: These commands are regarding with packet duplication, packet corruption, and packet reordering. The percantage of packet duplicaiton will be 1%, packet corruption will be 0.1, and packet re-ordering will be the second form, 25% of packets (with a correlation of 50%) will get sent immediately, others will be delayed by 1 ms. Please look at the following link for the details and usage : https://wiki.linuxfoundation.org/networking/netem
+4. Reports
+Use latex (you can use the first Homework template) to write the report. It should not be longer than 4-5 pages.
+Please write your problem &  solution, methodology to overview of your codes, scripts and your approach.
+For the network configuration part show your IP tables, your used commands to make the configuration and other settings. In other words, please write each step that you follow for the IP routing table modification.
+After obtaining the results and plotting these figures; report the figures and write your comments about the figures. You are expected to write at least one paragraph per figure. Ensure that the figures are self-explanatory: labels, captions and units are clearly stated in the figures. Use the paragraph to draw the attention to the most significant points of the figure, give specifics but do not repeat details. Ensure image clarity. Use legends.
+5. Submission
+Your scripts should take 5 MBytes as an input file which is called "input.txt" at the source site, and returns an output file named "output.txt" at the destination site.
+Use the COW system to submit  your homework. You should submit your code as a single file named as hw2_##.tar.gz that includes all the files through COW where ## represents your group number. Do not forget the replace ## with your group number.
+Your submissions should consist of  your source code and a ReadMe file, and your group report.  The ReadMe file should show clearly how to run your scripts, if any incorrect information, your system may not be executed correctly, then you can get zero point, please be careful and clear. Please, write Student ID, Name and Surname of each group member.   
+Late submission is allowed for this homework. Late submission policy is (5 x (late days x late days)).
+Your source codes will be checked with the codes in the previous years and on the internet in terms of academic dishonesty.
+6. Suggestions
+* In this homework, please select your slices from an INSTAGENI source to make the multiple interface available, since there is an error in the EXOGENI slices.
+
+* While plotting the figures, MatLab, Octave or gnuplot will ease your job if you can setup the output accordingly.
+
+* Each group member may get different grades. Sharing the workload is OK, but do not separate the coding part & the reporting part completely. Express clearly in the document who has done what!
+
+* You can use any programming language.
+
+* You can use any idea or approach unless it is specified in this document. 
+
+7. Evaluation
+1- Reliable Data Transfer protocol implementation 50 points. In detail, 25 points for your RDT protocol with proper checksum for the Topology 1. In other words, your input file, should be transmitted to the destination properly. If your code is succesful for the other Topologies, you will get 25 points left, in detail, you will get 10 points for topology 2, and 15 points for topology 3.
+
+2- Network configuration (your codes, commands, and IP Routing tables etc.) 20 points.
+
+3- Each figure and the associated paragraph will deserve  10 points. 
+3.1 Legend, axis labels, caption and units missing: -2 points
+3.2 Paragraph is not specific or repeats details: -4 points
+3.3 The paragraph derives wrong conclusions or not explanatory reflecting key learning points -4 points
+
+Therefore, there are 2 figure: 2 x 10 : 20 points
+
+4- Latex and clear ReadMe File 10 points. 
+
+5- BONUS PART: 30 points. Fastest implementation (FTTs of topology 3 to topology 1) will get 30 points. 30 points will be scaled to the speed of the file transfer by considering the class average.
