@@ -18,10 +18,10 @@ public class STACKOVERFLOWDB implements ISTACKOVERFLOWDB {
 	
 	private Connection conn = null;
 	
-	private static String user = "root";  
-    private static String password = "wowlove77!";
-    private static String host = "127.0.0.1";
-    private static String database = "test";
+	private static String user = "e2172088";  
+    private static String password = "b34d83";
+    private static String host = "144.122.71.165";
+    private static String database = "db2172088";
     private static int port = 3306;
     
 	
@@ -65,7 +65,7 @@ public class STACKOVERFLOWDB implements ISTACKOVERFLOWDB {
 		queryCreateTable="create table IF NOT EXISTS article (articleID varchar(10),"
 				+ "userID varchar(10),name varchar(80),description varchar(130),"
 				+ "date date,rating int,primary key(articleID),"
-				+ "foreign key(userID) references user(userID) on delete cascade)";
+				+ "foreign key(userID) references user(userID) on delete cascade on update cascade)";
 		try {
 			Statement stmnt = this.conn.createStatement();
 				result=stmnt.executeUpdate(queryCreateTable);
@@ -78,8 +78,8 @@ public class STACKOVERFLOWDB implements ISTACKOVERFLOWDB {
 		queryCreateTable="create table IF NOT EXISTS comment (commentID varchar(10),"
 				+ "articleID varchar(10), userID varchar(10), message varchar(130),"
 				+ "date date,rating int,primary key(commentID),"
-				+ "foreign key(userID) references user(userID) on delete cascade,"
-				+ "foreign key(articleID) references article(articleID) on delete cascade)";
+				+ "foreign key(userID) references user(userID) on delete cascade on update cascade,"
+				+ "foreign key(articleID) references article(articleID) on delete cascade on update cascade)";
 		try {
 			Statement stmnt = this.conn.createStatement();
 				result = stmnt.executeUpdate(queryCreateTable);
@@ -92,7 +92,7 @@ public class STACKOVERFLOWDB implements ISTACKOVERFLOWDB {
 		queryCreateTable="create table IF NOT EXISTS reputation (reputationID varchar(10),"
 				+ "userID varchar(10),weeklyReputation int,monthlyReputation int,"
 				+ "yearlyReputation int,alltimeReputation int, primary key(reputationID),"
-				+ "foreign key(userID) references user(userID) on delete cascade)";
+				+ "foreign key(userID) references user(userID) on delete cascade on update cascade)";
 		try {
 			Statement stmnt = this.conn.createStatement();
 				result = stmnt.executeUpdate(queryCreateTable);
@@ -147,11 +147,20 @@ public class STACKOVERFLOWDB implements ISTACKOVERFLOWDB {
 		int correctly_inserted = 0;
 		int result;
 		while(i<len){
+			String sql="";
+			if(users[i].getusername()==""){
+				 sql ="insert into user values('"+users[i].getuserID()+"',"+
+						"NULL"+",'"+
+						users[i].getregistrationDate()+"','"+
+						users[i].getlastLoginDate()+"')"; 
+			}else{
 			
-			String sql = "insert into user values('"+users[i].getuserID()+"','"+
+			
+				sql = "insert into user values('"+users[i].getuserID()+"','"+
 					users[i].getusername()+"','"+
 					users[i].getregistrationDate()+"','"+
 					users[i].getlastLoginDate()+"')";
+			}
 			try {
 				Statement stmnt = this.conn.createStatement();
 				result = stmnt.executeUpdate(sql);
@@ -174,11 +183,39 @@ public class STACKOVERFLOWDB implements ISTACKOVERFLOWDB {
 		int correctly_inserted = 0;
 		int result;
 		while(i<len){
+			String artID="";
+			String usID="";
+			String name="";
+			String des="";
+			if(articles[i].getarticleID()==""){
+				artID="NULL";
+			}
+			else{
+				artID="'"+articles[i].getarticleID()+"'";
+			}
+			if(articles[i].getuserID()==""){
+				usID="NULL";
+			}
+			else{
+				usID="'"+articles[i].getuserID()+"'";
+			}
+			if(articles[i].getname()==""){
+				name="NULL";
+			}
+			else{
+				name="\""+articles[i].getname()+"\"";
+			}
+			if(articles[i].getdescription()==""){
+				des="NULL";
+			}
+			else{
+				des="\""+articles[i].getdescription()+"\"";
+			}
 			
-			String sql = "insert into article values('"+articles[i].getarticleID()+"','"+
-					articles[i].getuserID()+"','"+
-					articles[i].getname()+"',\""+
-					articles[i].getdescription()+"\",'"+
+			String sql = "insert into article values("+artID+","+
+					usID+","+
+					name+","+
+					des+",'"+
 					articles[i].getdate()+"',"+
 					articles[i].getrating()+")";
 			try {
@@ -206,10 +243,39 @@ public class STACKOVERFLOWDB implements ISTACKOVERFLOWDB {
 		int result;
 		while(i<len){
 			
-			String sql = "insert into comment values('"+comments[i].getcommentID()+"','"+
-					comments[i].getarticleID()+"','"+
-					comments[i].getuserID()+"','"+
-					comments[i].getmessage()+"','"+
+			String artID="";
+			String usID="";
+			String comID="";
+			String mes="";
+			if(comments[i].getarticleID()==""){
+				artID="NULL";
+			}
+			else{
+				artID="'"+comments[i].getarticleID()+"'";
+			}
+			if(comments[i].getuserID()==""){
+				usID="NULL";
+			}
+			else{
+				usID="'"+comments[i].getuserID()+"'";
+			}
+			if(comments[i].getcommentID()==""){
+				comID="NULL";
+			}
+			else{
+				comID="'"+comments[i].getcommentID()+"'";
+			}
+			if(comments[i].getmessage()==""){
+				mes="NULL";
+			}
+			else{
+				mes="\""+comments[i].getmessage().replace("\"", "\"\"")+"\"";
+			}
+			
+			String sql = "insert into comment values("+comID+","+
+					artID+","+
+					usID+","+
+					mes+",'"+
 					comments[i].getdate()+"',"+
 					comments[i].getrating()+")";
 			try {
@@ -237,9 +303,22 @@ public class STACKOVERFLOWDB implements ISTACKOVERFLOWDB {
 		int correctly_inserted = 0;
 		int result;
 		while(i<len){
-			
-			String sql = "insert into reputation values('"+reputations[i].getreputationID()+"','"+
-					reputations[i].getuserID()+"',"+
+			String repID="";
+			String usID="";
+			if(reputations[i].getuserID()==""){
+				usID="NULL";
+			}
+			else{
+				usID="'"+reputations[i].getuserID()+"'";
+			}
+			if(reputations[i].getreputationID()==""){
+				repID="NULL";
+			}
+			else{
+				repID="'"+reputations[i].getreputationID()+"'";
+			}
+			String sql = "insert into reputation values("+repID+","+
+					usID+","+
 					reputations[i].getweeklyReputation()+","+
 					reputations[i].getmonthlyReputation()+","+
 					reputations[i].getyearlyReputation()+","+
