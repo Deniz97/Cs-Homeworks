@@ -1,0 +1,350 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+\usepackage{fitch}
+
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Deniz Rasim Uluğ \\
+Id Number : 2172088 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+ a)
+\begin{table}[H]
+\small
+\centering
+\caption{ $ [(p \rightarrow q) \wedge (q \rightarrow r) ] \rightarrow (p \rightarrow r)$  }
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|} %% specify column number
+\hline 
+$p$ & $q$ & $r$ & $p \to q $& $q \to r$ &$(p \rightarrow q) \wedge (q \rightarrow r)$ & $(p \rightarrow r)$ & $[ (p \rightarrow q) \wedge (q \rightarrow r) ] \rightarrow (p \rightarrow r)$ & \\
+\hline
+1&1&1&1&1&1&1&1& \\
+\hline
+1&0&1&0&1&0&1&1& \\
+\hline 
+0&1&1&1&1&1&1&1& \\
+\hline
+0&0&1&1&1&1&1&1& \\
+\hline
+1&1&0&1&0&0&0&1& \\
+\hline
+1&0&0&0&1&0&0&1& \\
+\hline
+0&1&0&1&0&0&1&1 \\
+\hline
+0&0&0&1&1&1&1&1 \\
+\hline
+\end{tabular}
+\end{table}
+
+It's seen that the above formula is a tautology.
+
+b)
+\begin{table}[H]
+\small
+\centering
+\caption{  $ \neg ( \neg p \wedge ( p \vee q) \to q) $  }
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|} %% specify column number
+\hline 
+$p$ & $q$ & $ \neg p $ & $ p \vee$ q & $ \neg p \wedge ( p \vee q) $ &  $ \neg p \wedge ( p \vee q) \to q $ &  $ \neg ( \neg p \wedge ( p \vee q) \to q) $  &  \\
+\hline
+1&1&0&1&0&1&0& \\
+\hline
+1&0&0&1&0&1&0& \\
+\hline
+0&1&1&1&1&1&0& \\
+\hline
+0&0&1&0&0&1&0& \\
+\hline
+\end{tabular}
+\end{table}
+
+It's seen that the above formula is a contradiction.
+
+\section*{Answer 2}
+
+$(p \to q) \wedge (p \to r) $  \quad \quad \quad \\
+$(\neg p \vee q) \wedge (p \to r) $ \quad \quad \quad Table 7 Formula 1\\
+$(\neg p \vee q) \wedge (\neg p \vee r) $ \quad \quad \quad  Table 7 Formula 1\\
+$\neg p \vee (q \wedge r) $ \quad \quad  \quad \quad \quad \quad Distributive Law\\
+$(q\wedge r) \vee \neg p $  \quad \quad \quad \quad \quad \quad Commutative Law \\
+$\neg (q \wedge r ) \to \neg p$ \quad \quad \quad \quad \quad Table 7 Formula 1\\
+$(\neg q \vee \neg r) \to \neg p $ \quad \quad \quad \quad De Morgan's Law\\
+
+
+
+\section*{Answer 3}
+
+A) \\
+\\
+a) $\exists x \forall y(F(x) \wedge D(x,y))$ \\
+b) $\forall y \exists x (F(x) \wedge D(x,y)) $ \\
+c) $ \exists y \forall x( (F(x) \to \neg  D(x,y)) $ \\
+d) $ \exists y \exists x_1 \forall x( D(x_1,y) \wedge( D(x,y) \to x=x_1) ) $ \\
+e) $ \exists y \forall x ( \neg F(x) \to \neg D(x,y)) $ \\
+\\
+B)\\
+\\
+a) $ \forall y \neg teaches(Ahmet Metin,y) $ \\
+b) $ \exists x \forall y(teacher(x) \wedge (teaches(x,y) \to enjoys(x,y))) $ \\
+c) $ \exists x \exists y (teacher(x) \wedge \neg teaches(x,y)) $ \\
+d) $ \forall x \forall y( \neg student(x) \to \neg takes(x,y)) $ \\
+e) $ \forall x \exists y_1 \exists y_2( teacher(x) \to ( teaches(x,y_1) \wedge teaches(x,y_2) \wedge y_1 \neg y_2 \wedge \forall y(teaches(x,y) \to (y=y_1 \vee y=y_2)))) $ \\
+
+
+
+
+\section*{Answer 4}
+
+\[
+\begin{nd}
+\hypo{1} {p}
+\hypo {2} {p \to(r \to q) }
+\have {3} {r \to q } \ie{1,2}
+\open
+\hypo {4} { \neg q}
+\open
+\hypo {5} {r}
+\have {6} {q} \ie{3,5}
+\have {7} {\bot} \ne{4,6}
+\close
+\have {8} {\neg r} \ni{5-7}
+\close
+\have {9} { \neg q \to \neg r} \ii{4-8}
+\end{nd}
+\]
+
+
+\section*{Answer 5}
+
+First we will prove lemmas we will use.
+\\
+Lemma1(LEM)
+
+\[
+\begin{nd}
+\open
+\hypo {1} { \neg (p \vee \neg p ) }
+\open
+\hypo {2} {p}
+\have {3} { p \vee \neg p}  \oi{2}
+\have {4} {\bot} \ne{1,3}
+\close
+\have {5} {\neg p } \ni{2-4}
+\have {6} {\neg p \vee p} \oi{5}
+\have {7} {\bot} \ne{1,6}
+\close
+\have {8} {p \vee \neg p} \ni{1-7}
+\end{nd}
+\]
+\\
+Lemma2
+
+\[
+\begin{nd}
+\hypo {1} {p \to q}
+\open
+\hypo {2} {\neg ( \neg p \vee q) }
+\open
+\hypo {3} {\neg p}
+\have {4} {\neg p \vee q} \oi{3}
+\have {5} {\bot} \ne{2,4}
+\close
+\have {6} {p} \ni{3-5}
+\have {7} {q} \ie{1}
+\have {8} {\neg p \vee q} \oi{7}
+\have {9} {\bot} \ne{2,8}
+\close
+\have {10} {\neg p \vee q} \ni{2-9}
+\end{nd}
+\]
+\\
+Lemma3(De Morgan)
+
+\[
+\begin{nd}
+\hypo{1} { \neg (p \vee q) } 
+\open
+\hypo {2} { \neg(\neg p \wedge \neg q) }
+\open
+\hypo {3} {p}
+\have {4} {p \vee q} \oi{3}
+\have {5} {\bot} \ne{1,4}
+\close
+\have {6} {\neg p} \ni{3-5}
+\open
+\hypo {7} {q}
+\have {8} {q \vee p} \oi{7}
+\have {9} {\bot} \ne{1,8}
+\close
+\have {10} {\neg q} \ni{7-9}
+\have {11} {\neg q \wedge \neg p} \ai{6,10}
+\have {12} {\bot} \ne{2,11}
+\close
+\have {13} {\neg p \wedge \neg q} \ni{2-12}
+\end{nd}
+\]
+\\
+Lemma4(Modus Tollens)
+
+\[
+\begin{nd}
+\hypo {1} {p \to q}
+\hypo {2} {\neg q}
+\open
+\hypo {3} {p}
+\have {4} {q} \ie{1,3}
+\have {5} {\bot} \ne{2,4}
+\close
+\have {6} {\neg p} \ni{3-5}
+\end{nd}
+\]
+\\
+Lemma5
+
+\[
+\begin{nd}
+\hypo {1} {\exists x \neg p(x)}
+\open
+\hypo {2} {\neg p(b)}
+\open
+\hypo {3} {\forall x p(x)}
+\have {4} {p(b)} \Ae{3}
+\have {5} {\bot} \ne{2,4}
+\close
+\have {6} {\neg \forall x p(x)} \ni{3-5}
+\close
+\have {7} {\neg \forall x p(x)} \Ee{1,2-6}
+\end{nd}
+\]
+\\
+Lemma6
+
+\[
+\begin{nd}
+\hypo {1} { \neg q \to \neg p}
+\open
+\hypo {2} {p}
+\have {3} {q} \by{Lemma4(Modus Tollens)}{1,2}
+\close
+\have {4} {p \to q} \ii{2-3}
+\end{nd}
+\]
+\\
+\\
+Now we can prove our main hypothesis. We will use or-elemination on $ q(a) \vee \neg q(a)$ and will prove our argument for both case.
+
+\[
+\begin{nd}
+\hypo {1} {\exists x(p(x) \to q(a))}
+\open
+\hypo {2} {p(b) \to q(a) }
+\have {3} {q(a) \vee \neg q(a)} \by{Lemma1(LEM)}{}
+\open
+\hypo {4} {q(a)}
+\open
+\hypo {5} {\neg ( \forall y p(y) \to q(a))}
+\have {6} {\neg (p(c) \to q(a))} \Ae{5}
+\have {7} {\neg( \neg p(c) \vee q(a))} \by{Lemma2}{6}
+\have {8} {p(c) \wedge \neg q(a)} \by{Lemma3(De Morgan)}{7}
+\have {9} {\neg q(a)} \ae{8}
+\have {10} {\bot} \ne{3,8}
+\close
+\have {11} {\forall y p(y) \to q(a)} \ni{4-9}
+\close
+\open
+\hypo {12} {\neg q(a)}
+\open
+\hypo {13} {\neg q(a)}
+\have {14} {\neg p(b)} \by{Lemma4(Modus Tollens)}{2,13}
+\have {15} {\exists y \neg p(y)} \Ei{14}
+\have {16} {\neg \forall yp(y)} \by{Lemma5}{15}
+\close
+\have {17} {\neg q(a) \to \neg \forall y p(y)} \ii{13-16}
+\have {18} {\forall y p(y) \to q(a)} \by{Lemma6}{17}
+\close
+\have {19} {\forall y p(y) \to q(a)} \oe{3,4-11,12-18}
+\close
+\have {20} {\forall y p(y) \to q(a)} \Ee{1,2-19}
+\end{nd}
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+​
+
