@@ -1,0 +1,213 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+
+%misc libraries goes here
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+\begin{document}
+\noindent
+\HRule
+\begin{center}
+\Large 
+\textbf{CENG 222}  \\
+\normalsize 
+Assignment 2 \\
+Deadline: May 13, 23:59 \\
+\end{center}
+\begin{flushleft}
+\normalsize 
+	Full Name: Deniz Rasim Uluğ \\
+	Id Number:	2172088
+\end{flushleft}
+\HRule
+
+% Write your answers below the section tags
+\section*{Answer 9.16}
+\subsection*{a}
+
+With the notation as used in the book, we have;
+\begin{center}
+$n=250$\quad$m=300$\\
+$ \hat{p_A} =0.04$\quad$\hat{p_B} =0.06$\\
+\end{center}
+Since we are asked the interval for confidence $\%98$, we have $1-\alpha =0.98$ and $\alpha =0.02$. We need;
+\begin{center}
+$z_{\alpha /2}=z_{0.01}=q_{0.99}$\\
+\end{center}
+From table A4 we see that $z_{0.01}=2.33$.\\
+
+Following this, we can directly substitute in the formula given in p.257;
+\begin{center}
+$ \hat{p_A} -\hat{p_B} \pm  z_{\alpha /2} \sqrt{\frac{\hat{p_A} (1-\hat{p_A} )}{n}+\frac{\hat{p_B} (1-\hat{p_B} )}{m}}$
+\end{center}
+
+Which the first term is the center and the latter term is the margin; the expression gives us the interval;
+
+\begin{center}
+$(0.04-0.06)\pm 2.33\sqrt{\frac{0.04\times 0.96}{250}+\frac{0.06\times 0.94}{300}}$\\
+$= -0.02 \pm 0.043 $\\
+$= (-0.063,0.023) $
+\end{center}
+
+Is our $\%98$ confidence interval.
+\subsection*{b}
+
+We can use Hypothesis testing for this problem. Take;
+\begin{flushleft}
+$H_0=$ There is no significant difference between the quality of two lots (Null Hypothesis)\\
+$H_A=$ There is significant difference between the quality of two lots (Alternative Hypothesis)\\
+\end{flushleft}
+
+Notice that the alternative is a "two-sided alternative". Again, with the notation in the book and values from part (a), our test statistic $Z$ is;
+
+\begin{center}
+
+$Z=\frac{\hat{p_A} -\hat{p_B}-D}{\sqrt{\frac{\hat{p_A} (1-\hat{p_A} )}{n}+\frac{\hat{p_B} (1-\hat{p_B} )}{m}}}$
+\end{center}
+
+Where by our Null Hypothesis $D=p_A-p_B=0$. Let's substitute in;
+\begin{center}
+$Z=\frac{-0.02}{0.0184}=-1.08$
+\end{center}
+
+By Z-test, we see that $|Z|=1.08<2.33=z_{\alpha /2}$ so we must accept the null hypothesis, at significance level $0.02$.  Let's also apply the P-test to be sure, or to see how much sure we are.
+
+\begin{flushleft}
+$P=2(1-\phi(1.08)) = 2(1-0.8599)=0.28$
+\end{flushleft}
+
+since P-value is greater then the significance level, we accept the Null Hypothesis so there is NOT a significant difference between the lots.
+
+\section*{Answer 10.2}
+
+Given data has mean $\bar{X} = 5$ and observation count $n=64$. An exponential distribution has parameter $\lambda$ which we can approximate as $1/\bar{X}$ since originally $X=\frac{1}{\lambda}$. So take $\lambda=\frac{1}{5}=0.2$. So,
+\begin{center}
+$F(x)=1-e^{-0.2x}$ for $0 \leq x < \infty $
+\end{center}
+
+Let's partition our data into 8 bins between 0 an 16, below are the bins $k$ and $Obs(k)$ for each of them. We can also calculate Expected number of occurrence $Exp(k)$, given the null hypothesis is true, by using the expression $Exp(k)=F(b)-F(a)$ where $k'th$ bin has the interval $(a-b)$. Here are the results;
+
+\begin{table}[H]
+\centering
+\label{my-label}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Bin Interval & $Obs(k)$ & $Exp(k)$ & $(Obs(k)-Exp(k))^2 / Exp(k)$ \\ \hline
+0-2          & 13     & 21.1   & 3.11                                        \\ \hline
+2-4          & 16     & 14.1   & 0.24                                        \\ \hline
+4-6          & 15     & 9.48   & 3.21                                        \\ \hline
+6-8          & 7      & 6.36   & 0.07                                        \\ \hline
+8-10         & 5      & 4.26   &                                         \\ \hline
+10-12        & 5      & 2.86   &                                         \\ \hline
+12-14        & 2      & 1.91   &                                         \\ \hline
+14 and above        & 1      & 3.89   &                                         \\ \hline
+\end{tabular}
+\end{table}
+
+Notice that $Exp(k)$ is less than $5$ for the last $4$ bin, so let's merge them together;
+
+\begin{table}[H]
+\centering
+\label{my-label}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Bin Interval & $Obs(k)$ & $Exp(k)$ & $(Obs(k)-Exp(k))^2 / Exp(k)$ \\ \hline
+0-2          & 13     & 21.10   & 3.11                                        \\ \hline
+2-4          & 16     & 14.14   & 0.24                                        \\ \hline
+4-6          & 15     & 9.48   & 3.21                                        \\ \hline
+6-8          & 7      & 6.36   & 0.07                                        \\ \hline
+8-12         & 10      &  7.12   & 1.16                                        \\ \hline
+12 and above       & 3      & 5.8  & 1.35                                   \\ \hline
+\end{tabular}
+\end{table}
+
+
+By summing the last column, we see that the observed $\chi^2_{obs}=9.14$.\\
+
+Finally, we can calculate the P-value $P=P\{\chi^2 \geq 9.14 \}$ with degree of freedom $df=6-1-1=4$. By table A6 our P-value is between $0.05$ and $0.1$ which is lower than the rule-of-thumb significance level of $0.1$ but higher than a $\%5$ significance level. So for $\%5$ significance level we have no significant evidence that the Null Hypothesis, that is the data is Exponantially distributed, is wrong. But it is a "close call".
+
+\section*{Answer 10.3}
+\subsection*{a}
+
+The given data has estimated mean $\bar{X}=-0.058$ and estimated standard deviation $s = 1.058$ with observation count $n=100$. Following the same strategy from the prior question, and using table A4 to calculate $Exp(k)$, let's quickly form our bins. Remember that since the question asks for Standard Normal Distribution, we do not normalize our variables like in Example 10.3, so for example $Exp(1)=100\phi (-1.5) = 6.68$. So we do not use $\bar{X}$ nor $s$, and we also won't deduct an extra $1$ from our degree of freedom.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+Bin Interval   & $Obs(k)$ & $Exp(k)$ & $(Obs(k)-Exp(k))^2 / Exp(k)$ \\ \hline
+-1.5 and below & 8      & 6.68   & 0.26                                        \\ \hline
+-1.5 to -1     & 15     & 9.19   & 3.67                                        \\ \hline
+-1 to -0.5     & 9      & 14.98  & 2.38                                        \\ \hline
+-0.5 to 0      & 22     & 19.15  & 0.42                                        \\ \hline
+0 to 0.5       & 15     & 22.21  & 2.34                                        \\ \hline
+0.5 to 1       & 12     & 13.97  & 0.27                                        \\ \hline
+1 to 1.5       & 11     & 8.2    & 0.95                                        \\ \hline
+1.5 and above  & 8      & 5.59   & 1.03                                        \\ \hline
+\end{tabular}
+\end{table}
+Where we have 8 bins and non of the expectation is below 5. The sum of the last column gives $\chi^2_{obs}=11.32$.\\
+
+Finally, we can calculate the P-value $P=P\{\chi^2 \geq 11.32 \}$ with degree of freedom $df=8-1=7$. By table A6 our P-value is ,again, between $0.1$ and $0.2$ which is higher than the rule-of-thumb significance level of $0.1$. So we have no significant evidence that the Null Hypothesis, that is the data is Standart Normally distributed, is wrong.
+
+
+\subsection*{b}
+
+This time we are looking for a uniform distribution with parameters $a=-3$ and $b=3$ and the cumulative distribution function $F(x)=\frac{x-a}{b-a}$ for $ a < x < b$, and $0$ for $x \leq a $ and $1$ for $x\geq b$. So we have $Exp(k) = 100(\frac{x+3}{6} - \frac{y+3}{6})$ where k'th bin has interval $(y,x)$.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+Bin Interval   & $Obs(k)$ & $Exp(k)$ & $(Obs(k)-Exp(k))^2 / Exp(k) $ \\ \hline
+-1.5 and below & 8      & 25     & 11.56                                       \\ \hline
+-1.5 to -1     & 15     & 8.33   & 5.34                                        \\ \hline
+-1 to -0.5     & 9      & 8.33   & 0.05                                        \\ \hline
+-0.5 to 0      & 22     & 8.33   & 22.43                                       \\ \hline
+0 to 0.5       & 15     & 8.33   & 5.34                                        \\ \hline
+0.5 to 1       & 12     & 8.33   & 1.62                                        \\ \hline
+1 to 1.5       & 11     & 8.33   & 0.85                                        \\ \hline
+1.5 and above  & 8      & 25     & 11.56                                       \\ \hline
+\end{tabular}
+\end{table}
+
+Where we have 8 bins and non of the expectation is below 5. The sum of the last column gives $\chi^2_{obs}=58.75$.\\
+
+Finally, we can calculate the P-value $P=P\{\chi^2 \geq 58.75 \}$ with degree of freedom $df=8-1=7$ (since again we have no estimated parameter). By table A6 our P-value is as a lot smaller than $0.001$, so we have a significant evidence that the Null Hypothesis, that is the data is Uniformly distributed in interval $(-3,3)$, is wrong.
+\subsection*{c}
+
+Yes, theoretically, for large samples a Uniform distribution would approximate to a Standard Normal distribution, by Central Limit Theorem, so the sample may not reject neither hypothesis. \\
+
+Even before that, since we are merely testing evidences, for some particular samples it is very possible that we may not have enough "sample strength" that would lead to the rejection of either hypothesis. But the first answer is more definite.
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

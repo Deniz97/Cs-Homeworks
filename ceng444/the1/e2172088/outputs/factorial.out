@@ -1,0 +1,5 @@
+in: out:  3628800
+out:  11
+Execution Result:  3628800
+
+(prog (stmt (io input n)) ; (stmt (ass i = (e (t (f 1))))) ; (stmt (ass retval = (e (t (f 1))))) ; (stmt (wh while (cond (e (t (f i))) <= (e (t (f n)))) (stmts (stmt (ass retval = (e (t (t (f retval)) * (f i))))) ; (stmt (ass i = (e (e (t (f i))) + (t (f 1))))) ;) endw)) ; (stmt (io output (e (t (f retval))))) ; (stmt (io output (e (t (f i))))) ; (stmt (ret return (e (t (f retval))))) ;)

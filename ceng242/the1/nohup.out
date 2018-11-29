@@ -1,0 +1,17 @@
+
+(process:28775): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(process:1122): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(process:24232): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(process:30264): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(nautilus:15715): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+** (nautilus:15715): WARNING **: Unable to get contents of the bookmarks file: Error opening file /home/duboy/.gtk-bookmarks: No such file or directory

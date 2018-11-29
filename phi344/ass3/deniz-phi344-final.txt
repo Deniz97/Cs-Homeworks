@@ -1,0 +1,604 @@
+Aristotle in his work Nechomecian Ethics (NE) gives two different accounts for pleasure, one in  book 7 chapters 11-14 and one in book 10 chapters 1-5. Let's first and foremost, start by looking at the general structure of both parts, and then try to discern the similarities and if there are any differences or conflicts on these accounts. Then we will eloborate on the subject matter itself with a metaphysical perspective, and finally we will try to give our own account being inspired from Aristotle's work and sailing in to the non-Aristotle waters.
+
+Before starting let's go over some distinction concerning the metaphysical differences between kinesis and energia, process and activity.
+
+The distinction between those two different ways of actuality is a well known one and there is very little academic dispute over them. Processes are actualities where they are not complete until they are finished. To give an example for process, when walking you can either be walking or have walked, and you can not say you have walked until you finished walking. For energia on the other hand, for example seeing as energia, saying "you are seeing" and "you saw" are the same thing, you can not both be seeing and not saw yet. The distinction will be important through out the essay, aspecially concerning the fact that what is a process can not be the good, as the good is complete in each case. Aristotle will take on the arguments saying that pleasure can not be the good because they are processes, and argue that pleasure are infact energia.
+
+Now that the difference is felt, we use the words motion, process and replenishment rather synanomously, and we will call energia simply activity when the context permits. At times when the context is not clear what we will call energia activity proper or complete activty. 
+
+He begins his discussion by noting that having a theorotical grasp on pleasure and pain is proper and needed for a political philosopher. For he said "[The political philosopher] is the master craftsman of the end to which look when we call each thing good or bad in an unqualified sense"( 7.11.1152b1-3). The importance of this kind of beginning is twofold. But first let's briefly mention an important conflict going out through out the book. 
+
+As also evident in the fact that Aristotle many times insisted that we should give the subject matter only the exactness it needs and no more,the whole book can be viewed from a perspective where Aristotle tries to mute the conflict between the political and philosophic live. Maybe following the death of Sokrates in the hands of statemans, and the evident following historical conflict between the politicians and philosophers in the Greek and specially in Athens, Aristotle's inquiry in to ethics is not completely alien to the political life nor completely belongs to the philosophical life. His work can be viewed in a light where Aristotle ends up showing that neither can be without the other in a city; the take of the work is the importance of good guidance provided by the politicians for the well-being of the state, and final subtle victory of the contemplation over phronesis, where even there Aristotle walks on a thin rope trying to make two different approaches co-exist as much as possible.
+
+In light of this, let's take a look at the two mentioned importances. Firstly, even tough this is not the first time Aristotle mentions pleasure, as both in book 1 when he initially dismisses a life devoted to pleasure as happy life, and in book 2 when he emphasise the effect of pleasures and pains on us for doing good or bad actions, and in many later accounts; this time Aristotle recommends pleasure as something worthy of serious discussion on its own right. While in previous works he subordinated the treatment of pleasure to the moral-political horizon which dominates NE as a whole this time he is interested in the nature of it, already giving us clues about the intented audience of the passage is shifting for the rest of the book 7.
+
+The second importance is as follows. The introduction of pleasure in this part completes an argument which has been gradually unfolding since Book 1. Aristotle began his work by emphasizing the dignity of politics asserting that it is the most architectonic of the disciplines(1.2.1094a26-28) and in book 4 he identifies this architectonic element to be the art or science of legislation(6.8.1141b23-29). He also gave two extreme examples of statesman and philosopher, when he contrasted Pericles with Thales and Anaxogoras. Yet the break starts in this point where Aristotle finally reveals that the master craftsman of the politics is not the statesman but the political philosopher; a middle ground occupied by the Aristotle himself. Contrary to a more pervasive view, not the statesman but the political philosopher is the standart which determines the human excellense itself, tough in what way he does Aristotle leaves to dicuess in the book 10.
+
+Now that we througly analyzed the import of the part from a retorical, or more truly "an audience orieanted perspective" where the shift in tone starts and the answer of the mentioned conflict starts to come to an end, let's go on analyzing the book 7 from a purely analytical, "nature of pleasure" perspective.
+
+The treatment in book 7 of pleasure can be divided in to first a three major part, each an objection to a negative view of the pleasure in relation to good; (a) the view that no pleasure is good, (b) the view that even if all pleasures are good best pleasure is not a good because it is a process, a KINESIS and not a ENERGIA, and (c) the view that most pleasure are base which he objects by a consideraton of the bodily pleasures. Let's now try to only identify and analyze the arguments where he reveals something about his own account, rather then those where he simply builds counter arguments.
+
+a) Starting chapter 12, he immediately divides what is good to two, those which are uncondinitally good which the standart for it is an excellent person, and those good which are only particularly/accidentially/unnaturally good, we take all those adjectives to be used synonimaously. From this, without yet determining wether pleasure is a process or an energia, he identifies the age-old defnition of pleasure as replenishment to only apply to some of the pleasures, and those pleasure to be only accidentally good, if and when they are good. It is only accidental that bitter water gives pleasure when we are thirsty or when we are going back to our natural state of not being thirsty, yet no man enjoys bitter water when they ar enot thirsty. To going back to our retorical argument, this advises his readers to study pleasures as a political philosophers, or an excellent person would.
+
+This example immediately gives away that, processes can also give pleasure, where he will also later say building, calculation and writing, which all are process, can give pleasure. This is an important point to keep in mind for later***.
+
+But then, the question begs wether pleasure, assuming it is an activity, a process or an ENERGIA itself. For Aristotle, all processes are energia and none of them are processes. Furthermore, again to use the prior distinction, those pleasures which are accidenteally good (the replenishment ones) have as something else as an end other than themselves, while other pleasures, which are naturally good, are their own ends. It is immedieately evident from this that accidenteally good pleasures can not partake or play a role in happiness/best good as they are not for themselves. Yet there is a contradiction here, in one sentence he says "[pleasures] are activites and an end" yet immedately he follows with how conditionally good pleasures have ends as something else. We will explain this contradiction later.
+
+Further more He goes on saying that, pleasure is in no case a "perceived replenishment/process" as plato said. Instead it is an activty, and an "unimpeded one" at that. The shift from a process to an activty will be evident in chapter 10, yet the shift from perceived to unimpeded is interesting. We will return to this point later on, for now simply Aristotle believes pleasures to be ENERGIAs, and believed their differentia to be wether they are somewhat "unimpeded". Tough the question stands, wether it is the pleasure themselves or the activities they belong is "unimpeded"***.
+
+So aristotles properly divides pleasures in to two, those leading to the perfection of a natural state and those that are activities of that state once it is fully developed. In both cases pleasure is the unimpeded activity of what is left in us as a natural state, particularly on the case of the replenishment***.
+
+b) In chapter 13, he continues to give arguments supporting the pleasure as a candidate of a good, even the best good. If pleasure is the unimpeded activity of the natural state, by extension each state has it's own activty, and it is better when its activy is unimpeded. Therefore since happiness is a such unimpeded activty of such a state, either all or one of them, pleasure may as well be or atleast partake in/be part of happiness. Happiness must be pleasure of a certain kind.
+
+Aristotle's own wording is not like that tough, as he says "if" such an extension can be done, and also he says "insofar as it is unimpeded" which we take to imply "because it is unimpeded rather than impeded" as it is obvious such "unimpedence" make such state/potentialy to actualize fuller in form, therefore be complete***. A better wording is given by Aristotle immediadely: "No activity is complete when it is impeded, and happiness is something complete".Such reading infact clicks perfectly with the account given in book 10 as "pleasure completes an activtiy" he will say. The import is that by the definition of pleasure being unimpeded activtity, happiness must be such an activty.
+
+Let's now stop and look at the retoric implications of such an argument. In book 1, Aristotle identified happiness as the supreme practical good for human beings which then is both the start and the end of the ethical inquiry. Since then tough Aristotle had been sparring on his account of Happiness, except in the end of book 6 where happiness was ilişkilendirilmek with neither ethical virtue nor prudence(replace this word, phronesis???), but with wisdom. But he never really attached happiness to the practice of ethical virtue in the first place, and now to add insult to injury, he now idntifies happiness not with noble actions but with pleasurable ones. And it is not even a pleasure which all are capable. Only to a small band or people who lives lifes according to contemplation.
+
+We emphasized this because Aristotle immedeately turn to this problem in the second part of chapter 13. After telling us that all animals and human pursue pleasure so pleasure may as well be the best good, he explains that not all of them pursue the same pleasure knowingly but may be pursuing it unknowingly, as "all things by nature have something divine in them". He obviously implies what all things pursue is the activty of this common divine element, which is the same through all things sharing the same form. This again click perfectly with book 10 where he eloborate on why people may be following different kind of pleasures, which we will also touch on***.
+
+The harsh truth corresponding to our retoric argument from this passage is that, some pleasures, particularly ones connected to this divine part, are not in reach of all people. He invites to his reader a self-doubt, again like he did when he advised to study pleasure as a political philosopher, this time he advises his audience about what kind of pleasure they should pursure; certainly the one that stems from the divine activity.
+
+He concludes with the suggestion that bodily pleasures stole the meaning of pleasure as they are easier to reach, and for some otehr reason we will later discuss***. This perfectly connects the train of tough to final chapter of book 7.
+
+c) In chapter 14, the final mission for Aristotle is to identify the place and relation of bodily pleasures in/with other pleasures. Isn't it hold widely that, lots of codionally good pleasure, like the bodily ones, seems bad? What gives?
+
+The discussion pretty much finishes without starting when Aristotle, in the first sentences of the chapter, asks "or are they good up to a point?". This turns out to be the case.
+
+For he says, some pleasure admits excess, while some like contemplation does not. And what a base person does is to go excess concerning these bodily pleasures which is why those kinds of pleasures seems to be base at times, so the bodily pleasures are not bad at every time. Tough it should also be noted that even if they were, it would have not interfere with the Aristotle's claim that happiness seems to be some kind of pleasure, as he had already divided the pleasure in to two and dismissed such "conditionally good pleasures" as candidates.
+
+By people incapable of enjoying other pleasure, and becose bodily pleasure is the most easily accesiable, as was already said, they stole the meaning of pleasure.
+
+The nature of pleasures, and actually the "condionally good pleasures", becomes more apparant with the following quote: " [Conditionally good pleasures] coincide with a certain activity of the part of us that remains healthy ...". Isn't this an obvious complement to his theory of pleasure as "unimpeeded activity of the natural state", where "what remains healthy in us" is that natural state and when it is unimpeeded it gives us pleasure***? Certainly.
+
+Aristotle finishes book 7 after giving one final passage about the limits of human happines, third time such a theme occuring in this part of book 7. 
+
+Our nature is not simple, so nothing is always pleasures to us, seemingly  contradicting with the idea that naturally good pleasures should have had no excess. But there is no such contradiction, as having an excess is not the same thing as actualization of a potantially diminishes. Aristotle will explain this seeming contradiction perfectly in book 10, so let's also keep this point in mind.
+
+Finally he mentions how god is simple, so it always enjoys a particular simple pleasure. A divine pleasure at it, an identification we saw already in part (b). He will identify this as contemplation in book 10. Such an ending reinforces the idea that nothing prevent pleasure from being the supreme good. 
+
+As the definition of pleasure goes, only the god himself takes constant pleasure, as his activty is at each time unimpeeded. 
+
+As the retoric argument goes, he is subtly setting up the victory of contemplation at book 10, without foregoing the phronesis side of the retoric as we can not contemplate only, we by our non-simple nature do and have to indulge in condionally good pleasures. At its face value, as we argued the shifting intented audience of this part of book 7, the admiters of philosophic lives, now fare better. But such a suggestion wouls have been disturbing for the political audience of the work. Aristotle solves the conflicting as we noted. Neither of two sides can reach happiness without contemplation nor ethical virtues, tough contemplation has the higher ground.
+
+On these grounds, it is not true to dismiss this part of the work as a simple draft for the account in book 10. These chapters of book 7 signifies a turning point and the begining of the end for the attentive reader, taking a high as far as the radical dissimilarities between the political and philosophic lifes.
+
+And even on the grounds of inquiry in to the pleasure, we will also show that how book 10 complements the accounts here, yet from a different retoric perspective.
+
+
+Having finished book 7, let's also give a summary of the account of book 10 and identify it's arguments related to our essay.
+
+In his final book, Aristotle finally presents an explicit account of happiness, that the compete happiness is found in the contemplative activty, and the practice of ethical virtues are happiness in a secondary way.
+
+First and foremost, the subject of pleasure is reintroduced on the ground of its critical influence on the moral education of the young. This time however, Aristotle carries a didactic concern on his account explicitly, and the phlosophical inquiry has been left at book 7. As While book seven started with the statemnt that such an inquiry was needed on philosophical concerns, the opening of book 10 and the justification for its treatment is given on practical concerns. A specially including the concern fur the education of the decent, altough not necessarily philosophic, readers.
+
+In chapters 2-3, he, as always, (a) takes on two conflicting views on pleasure and try to take forth the truth using these views. Then in chapters 4-5 he (b) gives his own account. We will try to mostly take on the arguments that distinguishes the treatment from book 7.
+
+a) Even tough he left the possibilty that the pleasure might be the best good open in book 7, now he claims that it can not, as since pleasure being added to an activty makes it more complete as he himself and Eudoxus said, same is true upside down, that pleasure is not complete by its own. We are looking for someting that cannot be made more complete, more choiceworthy by adding something to it. That qualification of the best good will be important later**.
+
+Let's also say that his explanation about pleasure admitting degree does not conflict with the idea that pleasure is not a process, as it can both be an end and admit degree; being a process is not the same as having a degree just as temples, an end to building, may admit degree in terms of beauty or sağlamlık or some other thins.
+
+A second important import for part (a) is that, in accord with his account in book 7, he throughly rejects the idea that pleasures are proccesses. He also repeats his ideas form book 7 where described pleasure as an energia rather than a process and the idea that some pleasures are only conditionally pleasures, like being only pleasures to a person in bad condition hence pleasures are not instrically bad, or they are not bad in all cases and only in certain conditions as he already discussed in book 7.
+
+One important take we will need is the following quote:
+
+"If, then, pleasure is replenishment of what is in accord with nature, that in which the replenishment is found will also be what is being pleased -hence the body. But it does not seem to be. Hence replenishment is not pleasure, altough someone would be pleased when the replenishment takes place ..."
+
+The turn we saw in book 7 in definition of pleasure, from the "perceived replenishment" to "unimpeeded activity proper" is recurring here, but there seems to be a slight conflict, almost an unsure-ment by Aristotle. He holds that pleasure can not reside in body, and what is left is only the mind. But then how can he dismiss "perception" in his turn of definition, forego it in his new definition? That is one of the three important disagreements in book 7 and 10 we will araştırmak.
+
+Finally, the source of the pleasure, the "pleasuree" is important and the standart is to be an excellent person. And also, going back to the begining of part (a) he again repeats that pleasure can not be the best good, this time because it is not complete or choice worthy by itself, and seeing and knowing are choiceworthy by themselves even if we took no pleasure in them. This final part is really suprising, as till now Aristotle held that pleasure is needed for the good, for actions to be taken, and he will go on arguing that each action has its own proper pleasure. Than we argue this suprising turn is not really a turn as much as warning to not give all credit to pleasures, a foreshadowing to the incoming idea that pleasures and actions are distinct and not the same thing, tough we will investigate the seaming conflict further later.
+
+This is also why, sadly, pleasure is not the best good neither.
+
+(b) This is where the fun part begins, as he gives his final verdict on the pleasure. Keep in mind that, as we argue, the change of tone from book 7 we are about to see is best explained by the different amaç of the passage, where now Aristotle has didactic concerns and his aim now is primarily to give in indepented standart by which pleasures can be ranked and judged, an aim as practical as it gets; and also to wrap up his account on the affect of pleasure on the good or the part that pleasue plays on the good.
+
+
+
+
+First he again stresses that pleasure is not a process, it is an energia. The explanation is expected and in accord with what was already said.
+
+Following this, he identifies that the best activity occurs when it is executed in the best possible way. For seeing to be excellent, both eye and what is being seen should be at good condition. By this way we say that, seeing becomes complete? But didn't we say that, proper activites are complete at each case? And what causes this completeness is the pleasure? But didn't he said, albeit we explained it by re-interpreting, that actions are choiceworthy even when there is no pleasure? Also, do pleasure arise when the activity is unimpeeded, or what makes the activity perfect is the addion of unimpeednes by pleasure? Which causes which? This is the second main contradiction in his account that we will also araştırmak.
+
+Foregoing the peculiar choice of the word "complete" for now, it still holds that somehow pleasures complete, or more correctly as we will argue perfects the activities and also make them more choiceworthy as was said. Yet these pleasures do not inhere in the activites themselves, they are "come to be in addition" as said by Aristotle. In his view, pleasure depends on the activity, each pleasure belongs to its proper activity. That is the main take of chapter 4-5.
+
+While in book 7 he defined pleasure as a some sort of activty, now he holds that pleasure and activity are, while bound together, nevrtheless different. This is the third and final disagreement we will further investigate.
+
+Where book 7 also emphasized a limit to pleasures, by our non-simple nature, he again now in accord with book 7 eloborates this line of thought. Continous pleasure is not, because contionus activity does not.
+
+The final and concluding tought of this part starts with the initial observation of book 10, namely that pleasure an pain extent throughtout the human life. It turns out that human beings have good reason to pursue pleasure, for this perfects activies and, therefore, life itself.
+
+Goind to chapter 5, now that we hold that Activity, not pleasure is the fundemental thing, and "each of the pleasures attached to the activity it completes", we can judge pleasures based on their corresponding activites. This point is in accord with book 7 when he said that pursuing pleasures of the divine activity was what should be done. Now he is eloborating his point further. "A pleasure belonging to an excellent activity is decent, and one tha tproperly belongs to a base activity is depraved". This does not conflict with the view in book 7 where he said an excellent person is the standart which to judge pleasures, even tough "excellent person" and "excellent activity" are not the same, we already expect for an excellent person to gain more pleasure from an excellent activity, which in each case the excellent person will take pleasure from it.
+
+It is now that practical implications of the new description, not definition, of pleasure reaches its high, Aristotle re-take the view from book 7 where he suggested that all might actually seek a single pleasure. This time tough he does not hold that all seek a single pleasure as much as he holds that there is a proper pleasure belonging to humans. The immediate problem with this view is apparant, with the multiplicity of the acitvite undertaken by different species and even different people in the same human species, how can we determine it? We can ofcourse determine it now, as we can now rank pleasures.
+
+In book 7, he said that people may be unknowingly be following the same, divine pleasure. And when they do pursue some other pleasure it is because of the deterrent from our natural state, which makes sense as he said in book 7 living itself is an ongoing destruction. It is again because our mortal and non-simple nature. So this time standart at each time a healthy and excellent person.
+
+This time, as his aim is practical this time, and now that he ilişkilendirmek each pleasure with an activity, he simple needs to find the activity of the excellent person, the activity that is the proper function of human which when human exercise that activity he is the excellent person. All the way back in book 1 he held that this function was to reason.
+
+Take a pause here and realize the threefold hiearchy about to pop in to foreground. As Tessitore suggests (1996, p.100), this threefold hiearchy, he distinguishes between primary, secondary, and remotely human pleasures corresponding to the three views of happines that Aristotle introduced in book 1, also are the parts of the soul; the life of study, the moral-political life, and the life of sensual pleasure, respectively. He injects a slight interpretation, saying that the phrase "secondary and many-times-removed" should not be taken as a single idiom but a divided one, which we agree.
+
+
+Again, as our retoric argument goes, even tough we deduced from book 1 that this primary pleasure was the pleasure of contemplation, Aristotle is not yet explicit about it, or more correctly he is not explicit about who this "excellent person" is, tough he is about the be explicit. This ambiguity is not without a practical concern, a concern that his decent readers should see in themselves to be this standart, to be this excellent person. He is on his final steps on bringing together the two different audiences he hitap-etmek, the philosopher and the kalas-getohs.
+
+
+Now that we have given our through commantary on the relevant chapters of NE, let's quickly go over the similarities and differences between the two accounts in book 7 and book 10.
+
+
+Book 7)
+
+1)Goods are divided in to two, so does pleasures. There are conditionally good pleasures, and natural pleasures.
+
+2) All processes are energia and an end. Yet conditionally good pleasures have something else as end. This is the first conflict.
+
+3) Following b, he turns from pleasure's differentia-genus pair as "perceieved replenishment" to "unimpeeded activity (of the natural state)".
+
+4) The question begs, wether the pleasures themselves as activites are unimpeeded, or the activites which causes them are unimpeeded.
+
+5)The pleasure is the unimpeeded activity of what is left in us from the natural state.
+
+6)Pleasure is a good, and maybe the best good, because happiness is the activity of a state, and it should be unimpeeded to be complete.
+
+7)All animals and humans pursue pleasure, so again it may be the best good.
+
+8)They may pursue different pleasures knowingly, but they must be pursuing the same divine pleasure unknowingly.
+
+9) Bodily pleasures stole the meaning of pleasure.
+
+10) Conditionally good pleasures admits excess so they can be base. Natural pleasures does not and cannot.
+
+11) Nothing is always pleasours to us. Because our nature is not simple.
+
+
+Book 10:
+
+1) Pleasure is not the best good, it can be make better with addition.
+
+2) Pleasures admit degree, but this is expected.
+
+3) Pleasures are not processes.
+
+4) Some pleasures are pleasorous only to people in certain conditions.
+
+5) Pleasures can not be replenishments as replenishments takes place in body. But then pleasures should take place in mind, which means they must be perceived, but we forgo perception in favor of unimpedness. This creates our second conflict.
+
+6) The standart for pleasure is the excellent person.
+
+7) Pleasures can not be the best good, as some actions are already choiceworthy without it. But we said many times that pleasure is needed for actions to be choice-worthy. And we said they were inseperable, and pleasure plays a very important role in impeeding or unimpeeding the actions. This creates a third conflict.
+
+8) Pleasure completes activites, but we said that activities, ENERGIA, is complete by itself. This creates a fourth conflict.
+
+9) Each pleasures properly belongs to its activity.
+
+10) While the prior point holds, pleasures and their activites are nvertheless different and not the same thing. Yet we took genus of pleasure to be activity. This is the fifth conflict.
+
+11) Continous pleasure can not happen, because contnious activity can not happen.
+
+12) Pleasures can be ranked by the activites they are associated with.
+
+13) The best pleasure is as it is to an excellent person.
+
+14) Contemplation is the best pleasure.
+
+Among these main takes from book 7 and 10, we can see that they both complenet eachother nicely. Complementing, in the context of the different aims and concerns each holds. Also at many times they are pointing to the same thing, or giving synonomous accounts.
+
+Let's take each element from 10 and place it in to book 7, as book 10 is the practical one and we expect book 10 to be either agree with 7 or not, and not the other way around.
+
+10.1 corresponts to 7.5, tough they do not contradict as Aristotle never made it sure that pleasure is the best good. 10.1 is in a sence continoun of book 7 from 7.5, as 7.5 was the "low point" of book 7 in terms of it was the closest part to an ethical concilus. It is structually very natural to book 10 to start from this point, only to take the treatment to a different, practical direction.
+
+10.2 is a simple argument in its own account in book 10.
+
+10.3 is a recurring theme both in book 7 and 10, corresponding to 7.2.
+
+10.4 corresponds both to 7.1 and 7.8. 
+
+In 7.1, he divides pleasures from a theorotical perspective, a divide that is also reached in book 10 by ethical means. In the former case he use the fact that some pleasures stems from a natural state while others stem from replenishment to a natural state. Those stemming from a natural state corresponds to pleasures of an excellent person, those which are replenishment are plesurable to people in certain conditions ergo conditional pleasures.
+
+For 7.8, 7.8 actually froms the theorotical background for 10.4, as he explains in 7.8 that why people pursue different pleasures which is the same thing as some pleasures of different people differ. He gives the explanation that life is itself a suffering, and suffering causes deficiency in natural state which at different cases call the need of different pleasures.
+
+10.5 corresponts to 7.3, but with a twist. This time there is indeed an apparent disagreement or unclearness which we will investigate.
+
+10.6 is the continouation of 10.4.
+
+10.7 is the conitonuation of 10.1 and there is an apparent contradiction which we will investigate.
+
+10.8 and onward book 10 starts a new description of the pleasures, and there are two contradictions raising from this main point of book 10, second being in 10.10, which both of these contradictions we will investigate.
+
+10.11 returns to the idea of continous pleasure from 7.11, which this time taken on hand with the new description of pleasure in 10.8
+
+10.12 through 10.14 again reitrates the ideas of 7.7-9. This time again with the new found ability to be able to rank pleasures. 
+
+So we conclude that, expect for these five conflicts than we need to investigate, both accounts throughly agree with each other and to show total agreement we will explain those five conflicts as best as we can. In fact, 2 of those 5 conflicts, first and  third, are not conflict between book 7 and book 10, but conflicts in their respective books themselves. Let's list those conflicts.
+
+1) Aristotle both holds that all pleasures are energia and ends, yet immedeately follow with that unconditional pleasures have something else as end.
+
+2) What determines when pleasure occurs by an activity, does it occur because we perceive it, or does it occur because the activity is unimpeeded. He gives the precedence to latter in book 7, yet implies former in book 10.
+
+3) How can actions be choice-worthy even without pleasures. This conflict is also doubly important as the related argument was given to discard pleasures as the best good.
+
+4) How can pleasure completes an activty as was said in book 10, yet we know that activities proper are already complete at each case.
+
+5) While in book 7 we took genus of pleasure to be activity, in book 10 we say pleasures and activites are competely different, even tough one always acompanies another.
+
+Let's take head on these disputes one by one.
+
+1) This conflict is actually cosely related to conflict 5. There is a peculiar double treatment going on here. While Aristotle holds that pleasures are energia he speaks correct. At each time the feeling of pleasure achieves its end, and pleasures are certainly for themselves, as he also says in book 10 that, no one asks one why do he pursue pleasure, as pleasure is pursued for its own sake. But that doesnt exlude that the activty the pleasure stems from may be a process itself. And Aristotle may be talking about such an end when puts that "conditonally good pleasures has something else as ends. This approach particularly makes sense, condiering that he already established that such pleasures are connected to processes in each case, as they are replenishments/motions going to the natural state.
+
+So this this end, we hold that Aristotle simlpy had not yet distinguished between pleasures and activities, and wording consequesntly fails. We will further eloborate this point in conflict 5.
+
+2) This point is peculiar. Bostock gives a good account of this in his paper, which we will use for help. In replenishment theory of Platon, the perception determines wether the act is pleasours. In Aristotle, tough, it is wether the act is impeded or not. If it is unimpeded, then consequesntly there is pleasure going on in mind. As Aristotle himself puts that the pleasure can not be happen in body.
+
+As Bostock puts it,  what is going on in mind is that the perception of replenishment. For example while we are drinking water when thirsty. While the replenishment happens in the body, the perception of it happens in the mind. And as one is drinking, if his senses are in good condition he will perceive it. So he argues that what is being enjoyed is not the replenishment itself, but in the touch of cold water on the tongue, the taste of the drink, and the perception that the drink is doing one a good. So, as was said, the pleasure lies in the perception itself.
+
+But this implies that, only if the activity is unimpeeded we can perceieve those things, so at each case unimpeedness preceedes the perception. While giving proper care to theorotical inquiry in book 7, Aristotle succesfully identifies the correct diferentia as unimpeedness. This is also in accord with the general idea that pleasures complements activities, if the differentia was to be perceieved, how could we argue that pleasures do indeed completes activities in the objective world. The whole equation would be limites to our minds; but with this succesfull differentia of impeednes Aristotle implies that the perception is just the mere but nessecery conclusion of such an unimpeeded activity.
+
+So by definition, unimpeeded activity borns pleasure, and it is up to the perceiever to perceive it to engage in that pleasure. Tough the conflicts further nullifies when we also impose on to Aristotle that, he may had already tought that in each case person in question will necceserily perceive the action, as -quoting Bostock- "Nothing will count as an activity unless the person in question is always aware that he is engaged in that activity, when he is."
+
+So as was said in book 10, the pleasure can not be defined as a replenishment for these exact reasons. And unimpeedness precedes perception, which in turn already implies perception.
+
+3) Even tough in the summary of the related part, we dismissed the seaming conflict saying that such was only a shot at guiding the reader in a argumentitive sense, such an approach is really missing a proper explanation.
+
+The conflict arises from the fact that, while on one hand Aristotle insists that pleasure completes an activity, and he walk along the lines that pleasure is a neccesity for us to choice an action over another; he somehow suddently excludes pleasure from the "choiceworthyness" of some actions. Would we really, as he says, "chooce them even if no pleasure resulted from them".
+
+We will argue in the final part of this essay that pleasures and actions are two sides of the same sword, and pleasure is a neccesery instrinctive force for us to move toward action rather than inaction. 
+
+We argue that Aristotle is mistaken here, and his idea comes from the prior parts of the NE, where we held that actions were done for their own sakes. So as we argued, the conflincting idea is borrowed from these prior parts to remind us that pleasured by themselves can not occupy the best good, furthermore pleasures are grounded in activities so the latter is choiceworthy without the former, while the tersi is not true.
+
+This tough, does not actually contradict with our account, tough only if we "interpret hard enough".
+
+The import is that, the idea that "activities nesscesitates pleasures" does not work the other way around, it does not cause activities to be undefined without proper pleasures, tough pleasures are indeed undefined without proper activities. The fact that there is always one when the other is something else. Even Aristotle points this out, immediately after the problematic passage: "If these [activities] entails necceserily entails pleasure, it makes no difference". And certainly such is the case.
+
+Adding pleasure to an action does not make it "more choice worthy" per se, as we said in book 1 that we do actions for themselves and not for something else. So we do not do actions to "get pleasure" or at least "getting pleasure" is not what we differ good action from bad action, so adding pleasure to it simply helps us "actualize" a potentiality in to an action, yet it does not make that action more "choice worthy". The error here stems from the double use of the word "choice worthy". On one hand we use it to imply that a particular action is good and good to act; yet on the one hand we use it to imply that a we prefer to choice an action over another action. Former implies wether that action is a good, and letter simply implies wether we prefer to do that action.
+
+From this than it can and will be said that, isn't the goodness of the action enough to exercise it? Well, this is why we and aristotle gives a special place to pleasure, as he says, "people deliberately choose pleasent things and avoid painful ones". Even tough we do not to actions for the sake of the pleasure it brings, otherwise everything would be for pleasure and pleasure would be the good; practically speaking pleasure simply encourages us to do these actions where we already deemed them to be a good and pleasure is no different, a good and not the good.
+
+
+So only from the perspective of deliberate choice the pleasure is needed for an action, but here aristotle simplies means the "choice worthyness" of an action, and not wether "one would choice such an action". Either a poor wording on his side, or a poor initial interpretation by our side.
+
+
+4) How can pleasure completes an activty as was said in book 10, yet we know that activities proper are already complete at each case.
+
+As in the first sentence of the related part, he says seeing is at each case complete, which also goes by the definition of energia. Yet immedeately on the following sentence, he says pleasure completes seeing.
+
+Here, we will use the help of Bostock again. The solution may be as simple as that, in the former case Aristotle means completeness in form, while on the latter he means perfection. And infact Bostock, after offering it, rejects this view on the grounds that, Aristotle would surely noticed the shift in meaning and would have used a different word. He goes on to argue that, maybe Aristotle tought the latter implies the former, as perfection in the sense of total completeness can not be without completeness in form.
+
+I hold this conviction to be true, adding that Aristotle may have noticed it in fact, and tought that the shift in context was enough of an indication of the shift in meaning.
+
+Similiar to the case in the conflict 3, the completeness in the letter sense implies goodness. An activity is better, as was already said many times before and aspecially in the passages relating to Eudoxus, adding pleasure to an activity makes it better. And since what is not complete is not good, being better also means being more complete. Pleasure perfects the activiity as far as its relation to good concerns.
+
+What kind of perfection is this tough? Since pleasure stems when the object and subject of the activity are in good condition, the usage of "complete" in sense of "perfection" means, as Bostock puts it, when (for building) the material is perfect, the builder is skillfull, the design is excellent and all other conditions are ideal.
+
+The catch is tough, none of these matters when the activity itself is impeeded, and for an activity to not be impeeded it needs completenes of form. This is why perfection or total completeness prerequisietes complenetess of form.
+
+This view, tough may born even a lengthier conflict, as follows: we just said an activity requires a completeness of form, but processes are not complete, then how can processes cause pleasure.
+
+This was a question we tried to avoid throughout the text, as we argue the account of Aristotle too clear for this to be a problem, that Aristotle in many places gives example of processes giving pleasure, like building, writing, calculating and so on. 
+
+The easiest answer, and the one we can give with the minimal amount of assumptions, as ocham's razor puts it, is as follows.
+
+
+A fuller account comes from Francisco J. Gonzalez in his paper, and in a footnote actually. First and foremost, remember Aristotle said clearly that the pleasures stem by a replenishment/processes are only conditionally good pleasures. So what we say should and will be in accord with this.
+
+What we take pleasure in such procsses, Gonzales puts, is not the motion itself but some activity accompaniying the motion. And this activity is our perception of the motion, as perception are already said to be complete in form, an energia. "If something like eating is pleasurable, this is only because the perception accompanying it is pleasurable".
+
+And the primary condition of the accompanying activity to be pleasurable for first it to be complete, which perception is, and secondly for it to be perfect and its obejct to be perfect. So when the building materials are perfect and the builder is skilled, there will be pleasure on the perception of sight of a flat wall, sight of a well-calculated plan, and tought of a grand temple going up. Yet thirdly, it should only be when the motion is unimpeeded, so it must be such a perception which depends on the motion itself. And this is only possible if the accompaniyng activity is us actively pursuing the pleasure through our senses; we choose to atent to it rather than not to.
+
+And when we say, such pleasures are only conditionally good, because they are " only pleasurable throught its relation to the activity of the perception". When the perception ceases, for example when the state is restored to its natural state and we no longer give attention to the plan or the wall but the whole temple, the pleasure from building diminishes and no longer is. 
+
+Even tough this account seems similiar to Landazuri, there is a subtle difference. In arguments in line with Landazuri, these activities accompaniyng the motion is taken to be distinct parts of the motion where each is whole in its way, like a note being played, or stones being melted. In our account however, inspired by Gonzalez, we signify a state being restored, where each case we are attentive to this restoration by the context we occupy, where the word context will appear properly in the final part of our essay. 
+
+In short, we try to emphasize the fact that, such uncoditionally good pleasures necceserily enjoyed by some acompanied activities, where activities themselves will be diminished at the motion completes. For Landazuri such is not the case, for our account we give that the activity is the active participation in perception of the motion, rather than simply being affected by its perfectness.
+
+Let's cease the argument now.
+
+
+
+
+
+5) While in book 7 we took genus of pleasure to be activity, in book 10 we say pleasures and activites are competely different, even tough one always acompanies another. So, can we identify a coherence, and decide which perspective Aristotle holds fully?
+
+For this part, Landazuri explains it the best, and the most definite.
+
+He draws attention to the twofold manifestation of an activity, like a double edge sword as we said before, whatever going in the outside at what end, and the necesery interpration of it inside on the other hand.
+
+To this end, he puts that while energia is the human action as a whole, it is composed of both what is done and also how it is felt.
+
+This is very much related to the concept of doing and undergoing giving the same occasion yet describing it from the different perspectives. While an activity is a doing for the person in question, he also by definition undergoes something, and what this something is can be given as the feeling, the pleasure, as Landazuri puts it, "the feeling of the concious activity". This is very much in accord with what we said pleasure is a concious activity after all, in conflict 4.
+
+So in this light, book 7 is right in calling pleasure an activity, it stems from an activity as much as undergoing stems from a doing, while it is itself an activity; the two are inseperable. While book 10, the account finally reaches its fullness, as the undergoing is at least in tongue seperated from the doing and anayzed in light of it.
+
+And this is, at the end of our part of essay on Aristotle, the true metaphyiscal foundation which pleasure stands on.
+
+Now that we have finally tried to resolve some conflicts arising from the case, and throughly walked over what are pleasures from an Aristotilian sense, let's finally give our own distinct account on it.
+
+One dicussion i feel is absent throught the work, tough it is a rather modern approach that we would not blame Aristotle for it. It is the neccesity of the context in undergoing the pleasure.
+
+For example sex, does it stem from the perception that we deemed worthy to have babiews by a cross-gender; or does it stem from the feel of touch and kiss and penis?
+In LAndazuri's account he uses these two concepts almost interchangebly, without ever mentionong, nonealone deciding, wether one spawns the other, in the sense that wether we perceive that our thirst has ended by the means of cold water on our tongue; or do we conciously know that we are curently finishing our thirst and the cold water on our tongue only acts as an assurance; as in the case of machine learning the knowledge, the perception of we drinking the water, gives a context to the upcoming feeling of coldness on our tongue which only then we give it meaning, where as pleasure has already happened or happening alongside the coldness but not caused by it.
+
+The "input" of cold water on our tongue is not enough to give us pleasure, the prior context of thirst is crucially needed for us, not just metaphysically but also cognitively to "gain" the "pleasure". In that sense while seeing and thinking are activites, pleasure accompanies them through the prior context; which while the objective part of it consist of knowledge, the subjective parts consist of pleasure. In this sense there is a nice dicotomy in the fact that in each case there is knowledge and pleasure, universal and particular, what is in each case is and what is particular to us, what is out there and what is in here; activity in each case is what does and undergoes; the big curse of belief that there is anything objective at all out there loses it's importance when you consider while from the inside where subjective exist we call what is outside objective; but form the outside subjective does not exist so without it neither the objective, so there are only things in each case. What good is what we learned to take pleasure from, while we admit degree and the best of these degrees is true "standart"; yet aristotle as many other philosophers fails to give any ground under his speech of "what should human do?", and he simply assumes what in each case they do is what they should do, the good is what is aimed by every other action.
+
+Teleology is the only place we can find any meaning, yet even tough it is unfortunate telos does not even come close to being "existing" in the grand scheme of things, for us tough it certainly exist, as we gain pleasure by things so we can differ what is in ourselves with what is outside. As Camus put's it, we look for meaning where there is not, and even tough there is not we can find it. And that is what it is to be a human. And that is the ground where we can ask, now that there is to be human, how should we be humans. I don't know what is metaphysical if not this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

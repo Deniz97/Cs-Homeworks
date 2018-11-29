@@ -1,0 +1,19 @@
+
+(firefox:12334): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(nautilus:12406): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+** (nautilus:12406): WARNING **: Unable to get contents of the bookmarks file: Error opening file /home/duboy/.gtk-bookmarks: No such file or directory
+
+(nautilus:12406): GLib-GIO-WARNING **: couldn't find a terminal, falling back to xterm
+Warning: locale not supported by C library, locale unchanged
+/usr/share/spotify/spotify: /usr/lib/libcurl.so.3: no version information available (required by /usr/share/spotify/spotify)
+
+(process:27554): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+/usr/share/spotify/spotify: /usr/lib/libcurl.so.3: no version information available (required by /usr/share/spotify/spotify)
+/proc/self/exe: /usr/lib/libcurl.so.3: no version information available (required by /proc/self/exe)
+[0413/032917.357331:ERROR:sync_control_vsync_provider.cc(64)] glXGetSyncValuesOML should not return TRUE with a media stream counter of 0.
+/usr/bin/spotify: line 3: 27554 Segmentation fault      (core dumped) /usr/share/spotify/spotify "$@"

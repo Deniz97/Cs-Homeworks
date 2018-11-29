@@ -1,0 +1,3 @@
+in: Execution Result:  89
+
+(prog (defin fun fibo (plist ( (idargs n) )) (stmts (stmt (iff if (cond (e (t (f n))) == (e (t (f 0)))) (stmts (stmt (ret return (e (t (f 1))))) ;) elsee endi)) ; (stmt (iff if (cond (e (t (f n))) == (e (t (f 1)))) (stmts (stmt (ret return (e (t (f 1))))) ;) elsee endi)) ; (stmt (ret return (e (e (t (f fibo (clist ( (args (e (e (t (f n))) - (t (f 1)))) ))))) + (t (f fibo (clist ( (args (e (e (t (f n))) - (t (f 2)))) ))))))) ;) endf) (stmt (io input n)) ; (stmt (ret return (e (t (f fibo (clist ( (args (e (t (f n)))) ))))))) ;)

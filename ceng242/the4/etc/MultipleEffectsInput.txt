@@ -1,0 +1,11 @@
+Trainer Count:2
+Pokemon Count:2
+
+0--Meowth--ElectriCity
+0::Tangela::GRASS
+1::Jolteon::ELECTRIC
+
+1--Iris--ElectriCity
+2::Tentacool::WATER
+3::Raichu::ELECTRIC
+

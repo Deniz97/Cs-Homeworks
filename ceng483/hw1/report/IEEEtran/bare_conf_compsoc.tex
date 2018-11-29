@@ -1,0 +1,852 @@
+
+%% bare_conf_compsoc.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE Computer
+%% Society conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference,compsoc]{IEEEtran}
+% Some/most Computer Society conferences require the compsoc mode option,
+% but others may want the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference,compsoc]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+%
+% Note that some packages require special options to format as the Computer
+% Society requires. In particular, Computer Society  papers do not use
+% compressed citation ranges as is done in typical IEEE papers
+% (e.g., [1]-[4]). Instead, they list every citation separately in order
+% (e.g., [1], [2], [3], [4]). To get the latter we need to load the cite
+% package with the nocompress option which is supported by cite.sty v4.0
+% and later.
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a sans serif font rather
+% than the serif font used in traditional IEEE formatting and thus the need
+% to invoke different subfig.sty package options depending on whether
+% compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+\usepackage{tikz,pgfplots}
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\begin{filecontents}{densek.dat}
+32,0.392
+64,0.439
+128,0.487
+220,0.484
+256,0.506
+280,0.501
+300,0.515
+320,0.506
+330,0.502
+340,0.500
+350,0.515
+370,0.508
+390,0.508
+420,0.506
+450,0.509
+490,0.510
+512,0.508
+\end{filecontents}
+
+\begin{filecontents}{densesigma.dat}
+0.1,0.458
+0.3,0.482
+0.5,0.454
+0.7,0.475
+0.9,0.476
+1,0.471
+1.1,0.500
+1.2,0.491
+1.4,0.511
+1.7,0.509
+2,0.490
+2.4,0.492
+2.8,0.491
+3.2,0.496
+3.7,0.471
+4,0.470
+4.5,0.461
+5,0.471
+\end{filecontents}
+
+\begin{filecontents}{denseet.dat}
+8,0.499
+8.7,0.505
+9.5,0.501
+10.3,0.505
+11.1,0.506
+11.8,0.512
+12.6,0.502
+13.4,0.488
+14.2,0.496
+15,0.510
+15.7,0.505
+16.4,0.501
+17.14,0.505
+17.8,0.506
+18.5,0.512
+19.2,0.502
+20,0.488
+\end{filecontents}
+
+\begin{filecontents}{densect.dat}
+0.01,0.49
+0.016,0.505
+0.022,0.501
+0.029,0.505
+0.035,0.506
+0.042,0.512
+0.048,0.502
+0.055,0.488
+0.061,0.496
+0.067,0.528
+0.074,0.495
+0.080,0.507
+0.087,0.496
+0.093,0.530
+0.1,0.504
+\end{filecontents}
+
+\begin{filecontents}{densess.dat}
+6,0.500
+7,0.490
+8,0.510
+9,0.494
+10,0.497
+11,0.509
+13,0.516
+15,0.525
+18,0.501
+22,0.504
+26,0.497
+35,0.456
+45,0.418
+60,0.351
+90,0.273
+110,0.233
+\end{filecontents}
+
+
+\begin{filecontents}{siftkmeans.dat}
+32,0.328
+64,0.375
+80,0.391
+90,0.379
+100,0.383
+110,0.374
+128,0.386
+140,0.385
+150,0.385
+160,0.394
+170,0.382
+200,0.374
+220,0.370
+256,0.378
+280,0.375
+300,0.381
+320,0.384
+330,0.373
+340,0.381
+350,0.374
+370,0.369
+390,0.375
+420,0.367
+450,0.356
+490,0.346
+512,0.359
+\end{filecontents}
+
+
+\begin{filecontents}{siftsigma.dat}
+0.1,0.173
+0.2,0.163
+0.3,0.101
+0.8,0.439
+0.9,0.425
+1,0.429
+1.2,0.416
+1.4,0.403
+1.7,0.385
+2,0.355
+2.4,0.341
+2.8,0.331
+3.2,0.293
+3.7,0.280
+4,0.279
+\end{filecontents}
+
+\begin{filecontents}{siftet.dat}
+8.0,0.393610
+8.78571,0.385151
+9.57142,0.402768
+10.3571,0.387453
+11.1428,0.394650
+11.9285,0.382164
+12.7142,0.384912
+13.5,0.408597
+14.2857,0.387121
+15.0714,0.391376
+15.8571,0.390506
+16.6428,0.406301
+17.4285,0.401349
+18.2142,0.398215
+19.0,0.393316
+\end{filecontents}
+
+\begin{filecontents}{siftct.dat}
+0.001,0.4781
+0.002,0.4847
+0.003,0.4773
+0.004,0.4794
+0.005,0.4798
+0.006,0.4579
+0.007,0.4738
+0.008,0.4701
+0.009,0.468
+0.01,0.4651
+0.0164,0.4558
+0.0200,0.4450
+0.0228,0.4363
+0.0292,0.4055
+0.0357,0.3942
+0.0421,0.3819
+0.0485,0.3665
+0.055,0.3563
+0.0614,0.3545
+0.0678,0.3199
+0.0742,0.3020
+0.0807,0.3002
+0.0871,0.2844
+0.0935,0.2850
+
+
+\end{filecontents}
+
+
+\usepackage{pgfplots}
+
+\usepackage{subcaption} 
+\usepackage{filecontents}
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Content Based Image Retrieval System Using SIFT Extraction}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Deniz Rasim Ulug}
+\IEEEauthorblockA{School of Computer Engineering\\
+Middle East Technical University\\
+Ankara, Turkey\\
+Email: deniz.ulug@metu.edu.tr}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page (and note that there is less available width in this regard for
+% compsoc conferences compared to traditional conferences), use this
+% alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+% no \IEEEPARstart
+In this report we try to tackle the Image Retrieval problem using SIFT[3] extraction based on Bag-Of-Words solution. The Image Retrieval problem is about, given an RGB image, returning the query images which are most similar to the given query image, with similarity scores. We also want this retrieval to be based on contents of the pictures themselves, and therefore be as invariant as possible to regular geometric transformations. For a solution, we will build a Visual Dictionary, and then represent each image as a vector which shows how much of each visual word the image contains. We will then use these vector descriptions, or "feature vectors", to calculate a basic euclidean distance to show similarity.
+
+
+\section{Architecture}
+Our architecture has 3 distinct steps in it. First, we extract all SIFT features from all images in database. Then we cluster this features in to K bins using K-means algorithm. With this we end up with K visual words and those K visual words forms a visual dictionary for us. Then using this dictionary, we extract K-size feature vector from each image, we will call these vectors BOF-vectors. Then for a given query image, we compare query image's BOF-vector with each BOF-vector in database, and BOF-vectors with smallest distance gives us our result; the similar images to the query image. Let's elaborate each step one by one.
+
+\subsection{Feature Extraction}
+
+First we apply the SIFT algorithm and extract some number of features form each image. For this, we either use a regular Sift algorithm, or another approach called Dense Sift. \\
+
+Regular Sift algorithm first extracts variable number of key-points from an image. The algorithm selects these key-points using Differences of Gaussian method, in English this DoG approach looks for points in image where a movement in any direction results in a high change in pixel values. The algorithm also returns a size for each key-point, which again the size which maximizes a laplacian filter around the key-point is chosen. Tough SIFT algorithm instead again uses Differences of Gradients in size dimension to approximate a laplacian filtering.\\
+
+For Dense Sift, we select key-points manually, at regular intervals which is defined by step size parameter. So for a 100x100 image with step size as 10, we would have $(100\times 100)/10 = 1000$ key points.
+
+Then for all key-points for a image, SIFT extracts a "local descriptor" from each key-point. This "local descriptors" are extracted from an area with size proportional to the key-point's size. For sift this is extracted, for dense-sift this is equal to step-size.\\
+
+Each local descriptor is a 128-element vector. Therefore an image with N key-points gives us N  feature vector where each feature vector is 128-dimensional. Concatenating all feature vectors from all images gives us, for example with regular sift with default parameters, around 3 million feature vectors.
+
+\subsection{Building Visual Dictionary}
+
+Now that we have all feature vectors of all images, we need to build a "visual dictionary" from this 3million x 128 tensor. For this, we cluster these feature vectors in to K bins. Naturally we use a K-means algorithm for this purpose. K-means algorithm groups these feature vectors in to K clusters and returns K centers, a 128-element vector in our feature space. We take those K centers as our "visual dictionary" where each center is a "visual word" for us.
+
+\subsection{Image-Feature pairs}
+
+Now that we have a visual dictionary, where each visual word in it is a 128-element vector; for a given image we may extract what we call a "BOF-vector". BOF stands for "Bag of Features". \\
+
+For this purpose, for each image, we apply the following steps:\\
+
+First we construct an empty BOF-vector, where its each element is 0. This BOF-vector has K elements in it, the K is the K we used for K-means algorithm, equivalently K is the number of visual words in our visual dictionary. \\
+
+Then we again extract all SIFT-vectors from the image using the same set of parameters we used while building our dictionary. Let's say we have M SIFT-features extracted from the image. For each such SIFT vector, we determine which visual word that SIFT vector is closest to. This actually tells us, which visual word the current SIFT vector belongs to. If the SIFT-vector is closest to Nth visual word, we increment Nth element of the BOF-vector by 1. \\
+
+Intuitively, what we call BOF-vector is a histogram, keeping track of the number of SIFT-feature from the image which we think belongs to a Visual Word, for each Visual Word. We also at the end normalize this BOF-vector by dividing every value by the total number of features in the image.\\
+
+Doing these steps, what we have is an image, BOF-vector pairs for all images.
+
+\subsection{Image Query}
+
+Now that we know the BOF-vector for each image, which is actually a K-element feature vector which we hope describes our image sufficiently "nicely"; for a given query image we calculate its BOF-vector, and compare query image's BOF-vector with all other image's BOF-vectors in database. To compare two BOF-vectors we simply use Euclidean distance. Close the two BOF-vectors, the more they should resemble each other. \\
+
+So by this way, for a given query image, we know "how much similar" each image in database to the query image. Then we can either return the top N similar images, or return images similar above a threshold.
+
+\section{Choose Of Parameters}
+
+There are 2 parts in our architecture which demands parameters. Those are  the SIFT algorithm and the K-means algorithm.\\
+
+For our implementation, for SIFT algorithm we use the OpenCV[2] library for Python programmin language, and for K-means we use the Sci-kit[1] library, again for Python.
+
+\subsection{K-means parameters}
+
+K-means implementation of Sci-kit admits 3 important parameters:\\
+
+1) Batch Size: Number of examples from whole data to sample to use at each iteration. The bigger this value is, more time and memory is used but more accuracy is gained. We set this as bis as we could given our hardware and also for the algorithm to finish in reasonable time, which was 10000 for us. \\
+
+2) Reassignment Ratio: The fraction of the maximum number of counts for a center to be reassigned. We again set this as big as we could and also for the algorithm to finish in reasonable time, which for our hardware was 0.1. \\
+
+3) Cluster Count: This is the infamous K parameter. We first tried the values 32, 64, 128, 256 and 512. After seeing that best maP was achieved at 256, we further divided the ranges and settled on XXX as K. More is explained in Experiments section.
+
+\subsection{SIFT vs Dense SIFT}
+
+As explained, SIFT algorithm admits two parts. First a set of key-points are selected, than for each key-point a local descriptor is extracted. While regular SIFT uses DoG to select key-points, we can also densely select key-points at regular intervals. The latter approach is called Dense SIFT. \\
+
+Since using Dense SIFT consistently gave us better maP results, we settled for Dense SIFT, and choose 10 as our "regular interval", in other words "step size". \\
+
+The results, where Dense SIFT consistently does better, can be intuitively understood as follows: \\
+
+Even tough we are doing "content based" image retrieval, we do not work with semantic information from images. We compare their features, albeit invariant at many respects, but still based on image pixels; intensities and gradients. And while semantic information in images usually confined to some particular area in it, like a cat or a baseball stick; non semantic content can be safely assumed to be scattered all across the image rather equivalently. For example, a "cat" image may have only a portion of pixels relevant to catness, but a "snowy mountain" image will have "snowy mountainess" on all the pixels consistently. \\
+
+So given the nature of our data set, it fares much better to sample the image as densely as possible, and at regular intervals to not bias over particular regions. Had our data set been zoo animals for example, where all images has "zoo'ness" scattered across an image and "lion'ness" in only particular regions, regular SIFT may have fared better. I believe that would be not "Content Based" but "Semantic Based" image retrieval.
+
+\subsection{SIFT parameters}
+
+SIFT implementation of open-cv library admits 3 important parameters: \\
+
+1) Contrast Threshold: The contrast threshold is used to filter out weak features in semi-uniform (low-contrast) regions. The larger the threshold, the less features are produced by the detector. We set this to a value found in Experiments section, the value which gave best maP. \\
+
+2) Edge Threshold: 	The threshold used to filter out edge-like features. Unlike Contrast Threshold, the bigger this value is the less features are filtered out. Intuitively this parameter set's how "corner like" we demand from a key-point to be included. We set this to a value found in Experiments section, the value which gave best maP.\\
+
+3) Sigma: 	The sigma of the Gaussian applied to the input image at the first octave. Then the sigma is increased iteratively for further octaves. Refer to original SIFT paper for the explanation for octave. We set this to a value found in Experiments section, the value which gave best maP.\\
+
+\section{Experiments}
+
+Do decide on our final parameters, we did a number of experiments. For each experiment, we varied a single parameter, and fixed all others to default value. This gave us a good idea about how each parameter results to our overall maP.  The default parameters and their maP scores are given in Table 1. \\
+
+\begin{table}[]
+\centering
+
+\label{my-label}
+\begin{tabular}{lll}
+Parameter          & Sift  & Dense Sift \\
+K                  & 128   & 256        \\
+Contrast Threshold & 0.04  & -          \\
+Edge Threshold     & 10   & -          \\
+Sigma              & 1.6  & 1.6        \\
+Step Size          & -     & 10         \\
+maP                & 0.376 & 0.496     
+\end{tabular}
+\caption{Default Parameters}
+\end{table}
+
+The first experiment we did on K, the cluster count. All other parameters were set to their default values as stated in their respective libraries documentations. The results are plotted in figure 1. We see that for sift, maP score maximizes around 150 and for dense Sift it maximizes around 250.So we took K to be 128 for Sift and 256 for Dense Sift in rest of the experiments. Also note that from now on, the maP score of any result may fluctuate which is caused by K-mean algorithm's in-determinism, so in this and all other plots, scores may vary $\pm 0.03$\\
+
+Next, we again varied sigma, all other variables as default.  Results are plotted at figure 2. We see that for Sift, maP score maximizes around 1 and for Dense Sift sigma has very little affect on final maP score, the reason is that unlike Sift, Dense Sift does not take sigma in to account during key-point estimation but only in feature extraction. We  took sigma to be 1.4 for Dense Sift. We should also note that our hardware with 16gb RAM gave Memory Error for sigma values 0.3, 0.4, 0.5, 0.6 and 0.7 with Sift.\\
+
+At figure 3 and figure 4, we evaluate Contrast Threshold and Edge Threshold parameters, again taking all other parameters as default and K as 128 for SIFT and 256 for Dense SIFT. We again see that neither parameter has an effect on Dense Sift, since those two parameters are only used for key-point estimation. What is more surprising is that Edge Threshold randomly fluctuates Sift's maP result, and the fluctuations are in the range of K-mean's error. Since in our plot 13 gives the biggest maP and it is closest to default value, 14, we will take 13 as our Edge Threshold parameter for Sift. For Contrast Threshold we take it to be 0.01 for Sift.  Even tough 0.003 actually gives the best result, taking it that low increases the estimated key-point count by an order of magnitude without significantly increasing the maP score.\\
+
+Finally we plot the Step Size versus maP graphics at figure 5. Here the Step Size is the interval which we sample the images for Dense Sift. Result shows that maP maximizes around 15, and quickly drops off after. We should also note that our hardware with 16gb RAM gave Memory Error for step size values 3 and 4 \\
+
+So, to put it all together, in table 2 we give the maP scores for Sift and Dense Sift and the best parameters we choose. As the result show, using Sift algorithm with its best parameters gave us 0.47 maP score while Dense Sift gave us 0.52 maP score. So the result is increased significantly for Sift, but only marginally for Dense Sift. Tough that is because Dense Sift had less important parameters compared to Sift.\\
+
+\begin{table}[]
+\centering
+
+\label{my-label}
+\begin{tabular}{lll}
+Parameter          & Sift  & Dense Sift \\
+K                  & 128   & 256        \\
+Contrast Threshold & 0.01  & -          \\
+Edge Threshold     & 13    & -          \\
+Sigma              & 0.95  & 1.4        \\
+Step Size          & -     & 15         \\
+maP                & 0.477 & 0.522     
+\end{tabular}
+\caption{Best Parameters}
+\end{table}
+
+Finally at figure 6, we provide some successful and failure cases of image retrieval. Each row has a single query image, followed by ground truth images which then followed by result images. First two rows shows successful cases where returned top 3 images were exactly the ground truth images. Third row is a failure case, and in returned images first ground truth image had been returned as 110th image and the second is as 1147 image. Likewise in fourth row, the first ground truth image returned as 31th most similar image and the second is as 41th. This show that when our system fails, it completely misses the content and not be off by a margin.
+
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[xlabel={$K$},ylabel={maP},
+legend pos=outer north east]
+% Graph column 2 versus column 0
+\addplot table[x index=0,y index=1,col sep=comma] {siftkmeans.dat};
+\addlegendentry{sift}% y index+1 since humans count from 1
+% Graph column 1 versus column 0    
+\addplot table[x index=0,y index=1,col sep=comma] {densek.dat};
+\addlegendentry{dense}
+\end{axis}
+\end{tikzpicture}
+\caption{maP versus K}
+\end{figure}
+
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[xlabel={$Sigma$},ylabel={maP},
+legend pos=south east]
+% Graph column 2 versus column 0
+\addplot table[x index=0,y index=1,col sep=comma] {siftsigma.dat};
+\addlegendentry{sift}% y index+1 since humans count from 1
+% Graph column 1 versus column 0    
+\addplot table[x index=0,y index=1,col sep=comma] {densesigma.dat};
+\addlegendentry{dense}
+\end{axis}
+\end{tikzpicture}
+\caption{maP versus Sigma}
+\end{figure}
+
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[xlabel={$Edge Threshold$},ylabel={maP},
+legend pos=outer north east]
+% Graph column 2 versus column 0
+\addplot table[x index=0,y index=1,col sep=comma] {siftet.dat};
+\addlegendentry{sift}% y index+1 since humans count from 1
+% Graph column 1 versus column 0    
+\addplot table[x index=0,y index=1,col sep=comma] {denseet.dat};
+\addlegendentry{dense}
+\end{axis}
+\end{tikzpicture}
+\caption{maP versus Edge Threshold}
+\end{figure}
+
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[xlabel={$Contrast Threshold$},ylabel={maP},
+legend pos=south west]
+% Graph column 2 versus column 0
+\addplot table[x index=0,y index=1,col sep=comma] {siftct.dat};
+\addlegendentry{sift}% y index+1 since humans count from 1
+% Graph column 1 versus column 0    
+\addplot table[x index=0,y index=1,col sep=comma] {densect.dat};
+\addlegendentry{dense}
+\end{axis}
+\end{tikzpicture}
+\caption{maP versus Contrast Threshold}
+\end{figure}
+
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[xlabel={$Step Size$},ylabel={maP}]
+% Graph column 2 versus column 0
+\addplot table[x index=0,y index=1,col sep=comma] {densess.dat};
+\addlegendentry{dense}% y index+1 since humans count from 1
+\end{axis}
+\end{tikzpicture}
+\caption{maP versus Step Size}
+\end{figure}
+
+\section{Future Work}
+We may add that our research can be immediately extended in three following ways; \\
+
+1) For Dense Sift, our current implementation takes the size of key points as the step size itself. Instead, while keeping sampling the key points in regular intervals, for each key point it size can be determined by applying a laplacian filter as is done in regular Sift. \\
+
+2) In this paper we searched for best parameters "linearly", and assumed that a parameter's effect to final maP is independent of other parameters. This assumption may be false, so a more sophisticated parameter search may form a co-variance tensor for all parameters and choose the parameters accordingly.
+
+3) Two main differences between Sift and Dense Sift are (a) the number of key point they produce and (b) the independence of the key points. The latter is because regular Sift tried to extract key point from "possible interesting regions with respect to pixel intensities". A research that compares Sift and Dense Sift maP's while keeping the number of key points as close as possible may give better idea about their differences.
+
+\section{Conclusion}
+To conclude, in this report we introduced a Bag of Word solution for Image Retrieval problem which utilizes SIFT detector. Our experiments showed that estimating key points densely increases the results, for reasons we have discussed. We also presented some success and failure cases to visualize our results. On average our system runs poorly. One interesting aspect is that we have almost no partial success cases, so we speculate that our feature detector either successfully captures the image content, or it completely fails, and the results follows accordingly.
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+
+\bibitem{IEEEhowto:kopka} 
+	Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., ... \& Vanderplas, J. (2011). Scikit-learn: Machine learning in Python. Journal of machine learning research, 12(Oct), 2825-2830.
+\bibitem{IEEEhowto:kopka} 
+	Bradski, G., \& Kaehler, A. (2000). OpenCV. Dr. Dobb’s journal of software tools, 3.
+\bibitem{IEEEhowto:kopka} 
+	Lowe, D. G. (2004). Distinctive image features from scale-invariant keypoints. International journal of computer vision, 60(2), 91-110.
+\end{thebibliography}
+
+\end{document}
+
+

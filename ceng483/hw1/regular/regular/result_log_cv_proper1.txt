@@ -1,0 +1,71 @@
+contrastThreshold': 0.01, 'n_init': 10,
+Best Score : 0.465109 
+
+
+contrastThreshold': 0.01642857142857143,
+Best Score : 0.455898 
+
+
+contrastThreshold': 0.02285714285714286,
+Best Score : 0.436320 
+
+
+contrastThreshold': 0.02928571428571429,
+Best Score : 0.405523 
+
+
+contrastThreshold': 0.03571428571428572,
+Best Score : 0.394299 
+
+
+contrastThreshold': 0.04214285714285715,
+Best Score : 0.381963 
+
+
+contrastThreshold': 0.04857142857142858,
+Best Score : 0.366519 
+
+
+contrastThreshold': 0.05500000000000001,
+Best Score : 0.356322 
+
+
+contrastThreshold': 0.06142857142857144,
+Best Score : 0.354521 
+
+
+contrastThreshold': 0.06785714285714287,
+Best Score : 0.319930 
+
+contrastThreshold': 0.07428571428571429,
+Best Score : 0.302046 
+
+
+contrastThreshold': 0.08071428571428572,
+Best Score : 0.300263 
+
+
+contrastThreshold': 0.08714285714285715,
+Best Score : 0.284495 
+
+
+contrastThreshold': 0.09357142857142857,
+Best Score : 0.285085 
+
+
+contrastThreshold': 0.1,
+Best Score : 0.259660 
+
+
+contrastThreshold': 0.01,
+Best Score : 0.465109 
+
+
+contrastThreshold': 0.020000000000000004,
+Best Score : 0.445056 
+
+contrastThreshold': 0.001,
+Best Score : 0.478136 
+
+
+

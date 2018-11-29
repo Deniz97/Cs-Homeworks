@@ -1,0 +1,15 @@
+
+(process:9607): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(process:15169): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(process:10984): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(process:13454): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(process:18099): Gtk-WARNING **: Locale not supported by C library.
+	Using the fallback 'C' locale.

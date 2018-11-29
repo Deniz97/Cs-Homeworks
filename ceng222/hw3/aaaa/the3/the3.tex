@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+
+%misc libraries goes here
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+\begin{document}
+
+\noindent
+\HRule \\[3mm]
+\begin{flushright}
+
+                                         \LARGE \textbf{CENG 222}  \\[4mm]
+                                         \Large Statistical Methods for Computer Engineering \\[4mm]
+                                        \normalsize      Spring '2017-2018 \\
+                                           \Large   Take Home Exam 1 \\
+                    \normalsize Deadline: May 25, 23:59 \\
+                    \normalsize Submission: via COW
+\end{flushright}
+\HRule
+
+\section*{Student Information }
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Deniz Rasim Uluğ  \\
+Id Number :  2172088 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+
+To find the answer with Monte Carlo simulation, first we will write a function in Matlab programming language that generates a number $n$ from a Poisson distribution with $\lambda=4\times5=20$. Then $n$ will be the number of minions we have caught in 5 hours. \\ We will also write another function which generates numbers $w$ and $s$ from a distribution defined by its pdf as given in the question text. Then we will generate $w$ and $s$ values independently (from other minions) for each minion, and basically see if the more than $6$ such minions' $w$ and $s$ values satisfy the given condition, and if so we have a success. This whole process is a single iteration. And the question actually asks the probability of "success".\\
+
+We will iterate this process independently $N$ times, and count how many of the iterations result in a success . The number of success divided by $N$ will give us the desired value. \\
+
+But first, let's calculate a number $N$, the total number of iterations we will do, which will satisfy the constraints given in Question 1, that with probability $(1-\alpha)=0.95$, our estimation of the "success probability" as described above will differ from the true value for more than $\epsilon=0.005$. Keeping in mind we don't have an intelligent "guess" for the desired probability, so we bound $p\times(1-p)$ by its maximum value $0.25$ as described in p.115-116 where $p$ is the probability of success, the formula for such an $N$ is directly given in p.116 as;
+
+\begin{center}
+$N\geq 0.25(\frac{z_{\alpha/2}}{\epsilon})^2$
+\end{center}
+
+Substituting, and with $z_{\alpha/2}=z_{0.025}=1.96$ from table A4;
+
+\begin{center}
+$N \geq 0.25(\frac{1.96}{0.005})^2 = 38146$
+\end{center}
+
+Which is large enough to justify the use of Normal Approximation used in the proof of the formula.\\
+
+Now, to generate a Poisson variable, we used the Arbitrary Discrete Distribution method from p.106. In fact we directly used the code from p.107. As said we took lambda to be $20$. \\
+
+To generate numbers Weight and Speed, we used the rejection method. We took boundaries for both Weight and Speed to be between $0$ and $20$. $0$ because it is given that both numbers are bigger than $0$, and $20$ because the probability for either of them to be $20$ is very low, practically zero (around $10^{-8}$). For $Y=f_{w,s}$ itself, we took the boundaries to be $0$ and $0.14$. $0$ because $Y$ is always positive, and $0.14$ because the maximum value of $Y$ is $\frac{1}{e^2}$ which is around $0.135$ \\
+
+Now, running the described Monte Carlo process $39.000$ times we found the probability of we catching more than 6 minions in 5 hours which satisfies the given condition to be $0.3049$.
+
+
+
+\section*{Answer 2}
+
+For this part we use a similar idea. Tough this time at each iteration,we find sum of the minions' weights and again sum this number across iterations, then divide by $N$, the number of experiments. We again take $N$ to be $39000$ in this part. \\
+
+We used the same methods to generate Poisson and w,s variables as in section 1.
+
+Doing this, we find the mean weight to be $42.001$.
+
+\section*{Answer 3}
+
+We again run a Monte Carlo simulation with number of iterations $N=39000$. \\
+
+At each iteration, we simply compute the desired expression. Then sum this value across iterations and finally divide by $N$ to get the expectancy(ie. mean). Notice than the distribution $N(0,1)$ is actually the Standard Normal distribution, so we used directly it. \\
+
+To generate an Exponential variable, we used the inverse transform method. Let $U$ be a standart uniformly distributed number, then $ X_{exp}\sim Exp(2)4$ is;
+
+\begin{center}
+$ X_{exp}=-(\frac{1}{\lambda})ln(U) $
+\end{center}
+
+And to generate Standart Normal distribution, we again used rejection method with boundaries $[-10,10]$ for $X$ and $[0,0.5]$ for $Y$. Again, $P(X)$ becomes practically zero outside this range and maximum possible value of $Y$ is lower than $0.5$. \\
+
+Doing this, we find the mean of the expression to be $0.311$.
+
+
+
+
+\end{document}

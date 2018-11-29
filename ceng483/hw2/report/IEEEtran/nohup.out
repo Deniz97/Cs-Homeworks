@@ -1,0 +1,8 @@
+
+(nautilus:20408): Gtk-WARNING **: 23:43:02.669: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+** (nautilus:20408): WARNING **: 23:43:03.260: Unable to get contents of the bookmarks file: Error opening file /home/duboy/.gtk-bookmarks: No such file or directory
+
+(nautilus:20486): Gtk-WARNING **: 23:43:06.155: Locale not supported by C library.
+	Using the fallback 'C' locale.

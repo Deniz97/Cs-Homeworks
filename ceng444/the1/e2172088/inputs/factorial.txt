@@ -1,0 +1,13 @@
+input n;
+
+i = 1;
+retval = 1;
+
+while i <= n
+	retval = retval * i;
+	i = i+1;
+endw;
+
+output retval;
+output i;
+return retval;

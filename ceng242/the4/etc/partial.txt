@@ -1,0 +1,13 @@
+./PokePartial;
+0 Charmander
+1 Psyduck
+2 Pikachu
+3 Bulbasaur
+4 Zapdos?
+			Charmander(600) hit Psyduck(700) 40(/)
+			Charmander(600) hit Pikachu(500) 60(/)
+			Charmander(600) hit Bulbasaur(800) 30(/)
+			Charmander(600) hit Zapdos?(650) 45(/)
+			Charmander(600) hit Charizard(600) 50(/)
+
+## IMPORTANT NOTE: In partial tests, printed lines will NOT affect results.

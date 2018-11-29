@@ -1,0 +1,86 @@
+Best Score : 0.392523 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 32, 'sigma': 1.6} 
+Used k : 32 
+
+
+Best Score : 0.439915 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 64, 'sigma': 1.6} 
+Used k : 64 
+
+
+Best Score : 0.487883 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 128, 'sigma': 1.6} 
+Used k : 128 
+
+
+Best Score : 0.484435 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 220, 'sigma': 1.6} 
+Used k : 220 
+
+
+Best Score : 0.506022 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 256, 'sigma': 1.6} 
+Used k : 256 
+
+
+Best Score : 0.501238 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 280, 'sigma': 1.6} 
+Used k : 280 
+
+
+Best Score : 0.515751 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 300, 'sigma': 1.6} 
+Used k : 300 
+
+
+Best Score : 0.506417 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 320, 'sigma': 1.6} 
+Used k : 320 
+
+
+Best Score : 0.502229 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 330, 'sigma': 1.6} 
+Used k : 330 
+
+
+Best Score : 0.500444 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 340, 'sigma': 1.6} 
+Used k : 340 
+
+
+Best Score : 0.515642 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 350, 'sigma': 1.6} 
+Used k : 350 
+
+
+Best Score : 0.508904 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 370, 'sigma': 1.6} 
+Used k : 370 
+
+
+Best Score : 0.508040 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 390, 'sigma': 1.6} 
+Used k : 390 
+
+
+Best Score : 0.506202 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 420, 'sigma': 1.6} 
+Used k : 420 
+
+
+Best Score : 0.509646 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 450, 'sigma': 1.6} 
+Used k : 450 
+
+
+Best Score : 0.510233 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 490, 'sigma': 1.6} 
+Used k : 490 
+
+
+Best Score : 0.508519 
+Params : {'OctaveLayers': 3, 'init_size': 300, 'n_init': 10, 'nfeatures': 0, 'step-size': 10, 'reassignment_ratio': 0.01, 'batch_size': 10000, 'contrastThreshold': 0.04, 'edgeThreshold': 10, 'K': 512, 'sigma': 1.6} 
+Used k : 512 
+
+
+NOW REGULAR SIFTTT

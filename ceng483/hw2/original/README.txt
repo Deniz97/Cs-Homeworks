@@ -1,0 +1,12 @@
+File list:
+- train.npy: feature vectors of training set 
+- valid.npy: feature vectors of validation set
+- train_gt.npy: ground truth ages of training set
+- valid_gt.npy: ground truth ages of validation set
+- evaluate.py: Script for computing 0-1 loss with threshold 10.
+- feature_extraction.py: Example script for feature extraction with Resnet18 pretrained network.
+- img_to_vec.py: Class definition that provides feature extraction from Resnet18.
+- test.jpg: Test image for feature extraction script.
+- the2.pdf: Homework text.
+- train.tar.gz: Training images.
+- valid.tar.gz: Validation images.

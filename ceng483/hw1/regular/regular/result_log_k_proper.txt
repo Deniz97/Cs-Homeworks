@@ -1,0 +1,130 @@
+Best Score : 0.328071 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 32, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 32 
+
+
+Best Score : 0.375294 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 64, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 64 
+
+
+Best Score : 0.386489 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 128, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 128 
+
+
+Best Score : 0.370795 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 220, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 220 
+
+
+Best Score : 0.378910 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 256, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 256 
+
+
+Best Score : 0.375639 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 280, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 280 
+
+
+Best Score : 0.381745 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 300, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 300 
+
+
+Best Score : 0.384914 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 320, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 320 
+
+
+Best Score : 0.373505 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 330, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 330 
+
+
+Best Score : 0.381335 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 340, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 340 
+
+
+Best Score : 0.374116 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 350, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 350 
+
+
+Best Score : 0.369786 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 370, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 370 
+
+
+Best Score : 0.375528 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 390, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 390 
+
+
+Best Score : 0.367804 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 420, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 420 
+
+
+Best Score : 0.356670 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 450, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 450 
+
+
+Best Score : 0.346016 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 490, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 490 
+
+
+Best Score : 0.359517 
+Params : {'batch_size': 10000, 'edgeThreshold': 10, 'OctaveLayers': 3, 'K': 512, 'contrastThreshold': 0.04, 'nfeatures': 0, 'n_init': 10, 'reassignment_ratio': 0.01, 'step-size': 10, 'sigma': 1.6, 'init_size': 300} 
+Used k : 512 
+
+
+Best Score : 0.391261 
+Params : {'K': 80, 'total_feature_count-sift': 2615970, 'step-size': 10, 'edgeThreshold': 10, 'init_size': 300, 'sigma': 1.6, 'nfeatures': 0, 'OctaveLayers': 3, 'batch_size': 10000, 'n_init': 10, 'reassignment_ratio': 0.01, 'contrastThreshold': 0.04} 
+Used k : 80 
+
+
+Best Score : 0.379034 
+Params : {'K': 90, 'total_feature_count-sift': 2615970, 'step-size': 10, 'edgeThreshold': 10, 'init_size': 300, 'sigma': 1.6, 'nfeatures': 0, 'OctaveLayers': 3, 'batch_size': 10000, 'n_init': 10, 'reassignment_ratio': 0.01, 'contrastThreshold': 0.04} 
+Used k : 90 
+
+
+Best Score : 0.383923 
+Params : {'K': 100, 'total_feature_count-sift': 2615970, 'step-size': 10, 'edgeThreshold': 10, 'init_size': 300, 'sigma': 1.6, 'nfeatures': 0, 'OctaveLayers': 3, 'batch_size': 10000, 'n_init': 10, 'reassignment_ratio': 0.01, 'contrastThreshold': 0.04} 
+Used k : 100 
+
+
+Best Score : 0.374477 
+Params : {'K': 110, 'total_feature_count-sift': 2615970, 'step-size': 10, 'edgeThreshold': 10, 'init_size': 300, 'sigma': 1.6, 'nfeatures': 0, 'OctaveLayers': 3, 'batch_size': 10000, 'n_init': 10, 'reassignment_ratio': 0.01, 'contrastThreshold': 0.04} 
+Used k : 110 
+
+
+Best Score : 0.385031 
+Params : {'K': 140, 'total_feature_count-sift': 2615970, 'step-size': 10, 'edgeThreshold': 10, 'init_size': 300, 'sigma': 1.6, 'nfeatures': 0, 'OctaveLayers': 3, 'batch_size': 10000, 'n_init': 10, 'reassignment_ratio': 0.01, 'contrastThreshold': 0.04} 
+Used k : 140 
+
+
+Best Score : 0.385680 
+Params : {'K': 150, 'total_feature_count-sift': 2615970, 'step-size': 10, 'edgeThreshold': 10, 'init_size': 300, 'sigma': 1.6, 'nfeatures': 0, 'OctaveLayers': 3, 'batch_size': 10000, 'n_init': 10, 'reassignment_ratio': 0.01, 'contrastThreshold': 0.04} 
+Used k : 150 
+
+
+Best Score : 0.394751 
+Params : {'K': 160, 'total_feature_count-sift': 2615970, 'step-size': 10, 'edgeThreshold': 10, 'init_size': 300, 'sigma': 1.6, 'nfeatures': 0, 'OctaveLayers': 3, 'batch_size': 10000, 'n_init': 10, 'reassignment_ratio': 0.01, 'contrastThreshold': 0.04} 
+Used k : 160 
+
+
+Best Score : 0.382588 
+Params : {'reassignment_ratio': 0.01, 'n_init': 10, 'contrastThreshold': 0.04, 'batch_size': 10000, 'nfeatures': 0, 'init_size': 300, 'K': 170, 'edgeThreshold': 10, 'sigma': 1.6, 'OctaveLayers': 3, 'total_feature_count-sift': 2615970, 'step-size': 10} 
+Used k : 170 
+
+
+Best Score : 0.374444 
+Params : {'reassignment_ratio': 0.01, 'n_init': 10, 'contrastThreshold': 0.04, 'batch_size': 10000, 'nfeatures': 0, 'init_size': 300, 'K': 200, 'edgeThreshold': 10, 'sigma': 1.6, 'OctaveLayers': 3, 'total_feature_count-sift': 2615970, 'step-size': 10} 
+Used k : 200 
+
+

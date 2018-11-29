@@ -1,0 +1,75 @@
+Best Score : 0.499239 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.01, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.505044 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.01642857142857143, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.501813 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.02285714285714286, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.505182 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.02928571428571429, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.506535 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.03571428571428572, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.512653 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.04214285714285715, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.502939 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.04857142857142858, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.488001 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.05500000000000001, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.496915 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.06142857142857144, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.528217 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.06785714285714287, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.495471 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.07428571428571429, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.507593 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.08071428571428572, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.496294 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.08714285714285715, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.530139 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.09357142857142857, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+
+Best Score : 0.504318 
+Params : {'nfeatures': 0, 'contrastThreshold': 0.1, 'n_init': 10, 'edgeThreshold': 10, 'total_feature_count-dense': 4560768, 'reassignment_ratio': 0.01, 'OctaveLayers': 3, 'init_size': 300, 'K': 256, 'batch_size': 10000, 'sigma': 1.6, 'step-size': 10} 
+Used k : 256 
+
+

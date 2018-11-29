@@ -1,0 +1,32 @@
+fun checkPrime(n)
+	i=3;
+	while i*i <= n
+		if (n % i) == 0
+			return 0;
+		endi;
+		i = i + 1;
+	endw;
+	return 1;
+endf
+
+fun nthPrime(n)
+	if n==1
+		return 2;
+	endi;
+
+	prime_count = 1;
+	current_number = 3;
+	while prime_count < n
+		if checkPrime(current_number) == 1
+			prime_count = prime_count + 1;
+		endi;
+		current_number = current_number + 2;
+	endw;
+	return ( current_number - 2 );
+endf
+
+input n;
+
+retval = nthPrime(n);
+return retval;
+

@@ -1,0 +1,470 @@
+\documentclass[titlepage, a4paper, 14pt]{extarticle} % extarticle for fontsize > 12pt
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+
+%\usepackage{xcolor}                                  % for colored codes
+%\usepackage{minted}                                  % for code highlighting
+
+\begin{document}
+
+% custom titlepage
+\begin{titlepage}
+
+\begin{center}
+
+{\large\bfseries MIDDLE EAST TECHNICAL UNIVERSITY\\
+               DEPARTMENT OF COMPUTER ENGINEERING\\}
+               
+               
+\vspace{5em}            
+{\LARGE\bfseries SUMMER PRACTICE REPORT\\}
+
+\end{center}
+
+\vspace{5em}
+\begin{itemize}
+%%%%%%%%%%%%%%%%%% FILL IN THE INFORMATION BELOW %%%%%%%%%%%%%%%%%%%
+\item[] \textbf{STUDENT NAME: Deniz Rasim Uluğ}       % NAME
+\item[] \textbf{ORGANIZATION NAME: Ada Yazılım}  % ORGANIZATION NAME
+\item[] \textbf{ADDRESS: Gazi Umur Paşa Sk. 38 / 10 Balmumcu Beşiktaş İstanbul PK: 34343 }            % ADDRESS
+\item[] \textbf{START DATE: }         % START DATE
+\item[] \textbf{END DATE: }           % END DATE
+\item[] \textbf{TOTAL WORKING DAYS: } % TOTAL WORKING DAYS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{itemize}
+\vspace{5em}
+
+\begin{minipage}{0.5\textwidth}
+\flushleft{\bfseries STUDENT'S \\SIGNATURE}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\flushright{\bfseries ORGANIZATION \\APPROVAL}
+\end{minipage}
+
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{empty} % No page numbering on ToC
+\newpage              % Force newpage after ToC
+
+% Add subsections as required
+
+\section{INTRODUCTION} \label{intro}
+
+I have done my summer practice at Ada Yazılım software company at Istanbul. Ada Yazılım provides software solutions for insurance industry. There, my summer practice consisted of two parts. \\
+For the first month, i have done some regular company work. The work consisted of implementing solutions for customer requests on Ada Portal, a web based application and the main product of the company. For that i implemented simple screens and coded for both the front-end and the back-end. \\
+For the second phase, on my guider's request, i moved to R\&D and tried to implement a neural network to make sense of the data the company has. The aim was to guess the probability of making a car accident of the insurant and/or how much money an insurant would cost the insurance company. The neural network would make this decision by solely the policy and personal details of the insurant. \\
+
+Because of already existing relation with  the company, I did not have any specific start and end date. My inter-ship started at the start of summer until the end of it, with some natural absences. Yet I made my intern-ship well beyond 30 day mark. On top of that during the intern-ship we also tried to look in to other topics, like Test Driven Development; but these 2 projects was where i spend the bulk of my time on.
+
+
+\section{INFORMATION ABOUT PROJECT} \label{info}
+
+\subsection{Ada Portal} \label{portal}
+
+Ada Portal is the main product of the company, which is a web application for insurance companies to automatize their work. The main page of the Ada Portal can be seen in Figure 1. Each company has their own account in the system, and the portal is slightly customized for each company and it's requests. \\
+
+
+My work on this part was to implement some basic screens, shown trough Figures 2 to 5. The screens and their functionalities i implemented arise from customer requests, which my guider gave me three of these requests, rather basic ones. \\
+
+
+In all four i used JavaScript and AngularJS for front-end, C\# and company libraries/classes for back-end and also basic SQL tables and queries. \\
+To summarize them: \\
+$\bullet$ First screen list's the menus on the portal on left, and the user can click on multiple of them to see which system roles can access all of the menus selected. \\
+$\bullet$ The second screen is a simple log display, which upon clicking a system role, shows all the recent users both added to role and removed from it. \\
+$\bullet$ The third screen, is also a log display, adds two buttons to each user's page, which shows the activities of these users; the activities where they added/removed some user to a role, or the activities that some other user added/removed them to a role.
+$\bullet$ The fourth and final screen was a basic table where the company employee could view some "un-produced policies", their details, and a button to automatically produce these policies. The reason for this screen was that there was a known bug in the system that sometimes a "cross policy" of a "main policy" would not be produced. This screen helped the customer to view these policies by hand, just in case, and produce them with a simple button. The screen-shot for this screen is absent.\\
+
+The biggest challenge for this part for me was writing clean and safe production code. It had to be maintainable, self-explanatory and what not. In many cases, I had to make decisions not on how to implement a certain thing, but which implementation to choose among possible ones so that the obvious trade-offs are satisfied at most; like loading server vs database, adding an extra argument to a function vs writing a new function, modifying someone else's class or not etc. It was also good practice for general full-stack development. 
+
+
+
+\subsection{Neural Network} \label{neural}
+
+For the second part, my guider, upon hearing that machine learning is the new flavour of the month, asked me to research in to the subject and see if we could make use of the company data, which is rather big. The main idea was to use the data and Neural Network(NN) to predict how much damage or "cost", in terms of money, would an insurant cause in car insurance, given their policy and personal details.\\
+
+Let us first be clear on some terminology. "Cost" as we use in this document means the total money the insurance company had to pay to the insurant during his policy. Insurant is the customer of the insurance company, and the policy is both the product of the insurance company, and a deal between the insurance company and the insurant.\\
+
+Let us also add that, from now on the "car insurance" means what is in Turkish "Trafik Sigortası" which is obligatory for each vehicle on the road; and kasko insurance is optional for any vehicle and used same with it's turkish counterpart, "Kasko Sigortası".
+
+\subsubsection{ANALYSIS PHASE} \label{analysis}
+At first the main challenge of the project was that, i had never heard about Machine Learning or Neural Networks worked. The first two sources I read was "Neural Networks and Deep Learning" by Michael Nielsen.\footnote{http://neuralnetworksanddeeplearning.com/} and "Understanding Machine Learning" by Shalev-Shwartz. I also looked in to many web-pages to grasp both the theory and implementation of Neural Network. \\ 
+
+It took quite some time, but i finally came across the Tensorflow and Keras python libraries and decided to use these for implementation. \\ At this phase we also thought about what informations from the data we would use as input; such as the color of the car, the birth-city of the insurant etc. This was important for this phase because the data was scattered among multiple tables in company's database so first i wrote a python script that would gather and extract all our needed data; writing them to a single table which we can make use of. Figure 6 Shows the start of that script.
+
+\subsubsection{DESIGN PHASE} \label{design}
+
+We decided to use the Neural Network approach, mainly out of ignorance on the Machine Learning subject and more importantly the success of NN approach shown recently in the software world. So until later into the project, i did not researched in to other possible ML approaches. \\
+
+It should be noted here that i also scratched some prototypes using K-Neighbour approach, but they immediately gave worse results then NN so i moved all my focus in to NN solution. The start of the code for that can be seen in figure 10. \\
+
+Now that the approach was set, and we gathered our data nice and clean, the next decision was how to "normalize" the input data; that is (1) how to encode discrete inputs like color and birth city, and (2) how to normalize the ordinal inputs like age and "step-number"(given by insurance companies based on how much car accident the insurant made previously). \\
+
+As it is for all of the project, here too lots of trial and errors were done to determine the best normalization decisions. But after all of it, down below is given the summary of our final input format. For all of the discrete inputs we used one-hot-encoding. That means, instead of a single input, for example RED, we have an array of inputs. The array is of the length the possible number of different input types, and all but one of the elements of this input array is 0. The one input that is 1 corresponds to true input, like [0,0,1,0,0,0] if color had 6 possible different types and 3rd of these was the color RED. So for each discrete inputs, we also need the "count" of possible types of that inputs.\\
+
+For ordinal inputs, we normalized them all by "squeezing" the input between one and zero. For this, obviously, we needed the maximum and minimum possible number for that input. The reasoning for this decision goes as follows: inputs with larger numbers would confuse the NN into thinking that input is more "influential" in that particular training case. So we made sure all our ordinal inputs reside between 1 and 0, so we have as little "confusion" as possible. \\
+
+Now, our output was going to be simple, a single number expressing how much cost, which is the amount of money the insurance company pays the insurant for his damages, the NN predicted for a policy. But squeezing this number between 1 and 0 tough to be problematic, as rather bigger costs in our data-set was too far-between, so determining the "maximum cost" was hard. If we would took the real maximum cost among the data-set as the maximum possible cost, other outputs would squeeze too close to zero and also to each other. For this, we inspected the data by hand and determined a good enough number to call the "maximum possible cost". Another idea was to simply divide each cost by a fix number, like thousand. We tried both scenarios and at the final prototype we actually used the former approach, as that gave us better results. \\
+
+Lastly, another design issue was making sense of the output. I will go in to detail more in the implementation phase, but in short we kept changing our design and implementation based on how we preferred to "understand" the output. For the final prototype, we show cased two different approaches: categorical and regression. For the regression, we used the "total cost" as the output, as explained previously. \\ 
+
+But then, and in fact after we finalized the prototype, the following tought hit me, isn't it little naive to assume the total cost of an policy to depend on the limited variables we have? Or at least to enough extend that NN solution would make sense with our limited type of variables? Or in other words, maybe red cars driven by teachers in the City Konya with car model older than 2011 do really \underline{make} more car accidents than others, but the \underline{cost} of such accidents depends on a lot more factors, like the point of impact, speed of the other cars etc. So i figured it may be more realistic to expect NN to predict "if the insurant will make accident", rather then "how much cost these accidents will produce". So then born our categorical approach. \\ 
+
+There were many design related decisions, these were just some examples of them. As will be explained in next subsection, we went back and forward many times, studied the theory of NN in parallel to experimentations. To end this subsection, finally here is some information about our final input set. Keep in mind that we actually had two different "policy domains", tough related, one is car insurance, and the other is KASKO insurance. Names are given in their original language, Turkish, to avoid translation confusions. \\\\
+Ordinal Inputs:\\\\
+Motor Gücü$\rightarrow$Min:20, Max:300\\
+Silindir Hacmi$\rightarrow$Min:100, Max:10000\\
+Tarife Başlangıç Kodu$\rightarrow$Min:0, Max:7\\
+Önceki Tarife Başlangıç Kodu$\rightarrow$Min:0, Max:7\\
+Sigorta Ettiren Tuzel Yaş,Sigorta Ettiren Gerçek Yaş,Sigorta Edilen Tuzel Yas,Sigorta Edilen Gerçek Yaş -> Min:18, Max:70\\
+Araba Modeli $\rightarrow$Min:0(son model), Max:30\\\\
+Discrete Inputs:\\\\
+Marka: Number of brands in data-set\\
+Ettiren/Edilen Tuzel il, Ettiren Edilen Gercek il: 85(81 in turkey,3 in KKTC, and 1 for unkown)\\
+Ettiren/Edilen Gercek Uyruk: 2 $\rightarrow$T.C., Diger\\
+Ettiren/Edilen Gercek Medeni: 3 $\rightarrow$Evli, Bekar, Bosanmis/Dul\\
+Arac Tarzi: 23\\
+Yakit: 10 $\rightarrow$ Benzin elektrik, benzinli, benzinli lpg, bilinmiyor, cing, dizel, dizel  lpg, elektrik, lpg, motorsuz\\
+Sakinca: 7 $\rightarrow$Çalinti, Icralik, Sakincasiz, Veraset, Yakalama, Yakalamal Haciz, Bilinmiyor\\
+Hurda: 3 $\rightarrow$Evet, Hayir, Bilinmiyor\\
+Cekildi: 3 $\rightarrow$EHB\\
+Onceki sirket kodu: 44\\
+Arac Renk: 11 $\rightarrow$Kirmizi, Mavi, Sari, Yesi, Beyaz, Siyah, Kahve, Gri, Turuncu, Mor, Bej\\
+Kasko Meslek: 12 $\rightarrow$Seciniz, Ogretmen, TSK, Akademisten, Kamu, Ozel, Acenta Sahip, Ezcacı ,Emekli,Personel Indirimi, Ev Hanimi, Diger\\\\
+Extra inputs which are only for KASKO:\\
+Rent a car $\rightarrow$Min:0, Max:17\\
+Anahtar Teslim: 3 $\rightarrow$ EHB(Evet,Hayır,Bilinmiyor) \\
+Yanlis Akaryakit: 3 $\rightarrow$EHB\\
+Patlayici Parlayici: 3 $\rightarrow$EHB\\
+Aracin Asil Anahtar ile Calinmasi: 3 $\rightarrow$EHB\\
+Anahtar Kaybi: 3 $\rightarrow$EHB\\
+Ozürlü Arac: 3 $\rightarrow$EHB\\
+
+In total, Car Insurance had 24 input category with 591 input total(this high number is because of one hot encoding)(Also the number is more than Kasko because Car Insurance data-set contained a lot more car brands than Kasko).\\
+
+Kasko Insurance on the other hand had 31 input category with 561 input total.\\
+
+In Ordinal inputs, values lower than the Min taken as Min, and same for Max.\\\\
+Also for Discrete inputs, those values which was submitted mistakenly and/or was unrecognisable was assumed as either:\\
+1) A default value (For example T.C. for uyruk or Gri for color)\\
+2) Unknown value (For example as in Sakinca Durumu)\\
+3) none and they would not taken in to consideration. In that case our one-hot-encoding would not contain a 1 in it(For example such was the case il categories.\\
+
+Finally, for car insurance we had a million policies, tough we only end up using 400 thousand of them; and for kasko insurance we had close to 80 thousand policies. Due the nature of the domain, around $\%80$ of each dataset was with output zero, in other words did not had any car accident. The number was slightly lower for kasko case.
+
+\subsubsection{IMPLEMENTATION PHASE} \label{implementation}
+
+The bulk of the main implementation is done in Keras library in Python language. As explained, because of very little prior knowledge on subject matter, both Machine Learning and Insurance industry, many of the hyper-parameters are found trough trial and error. \\
+
+So, what do i mean by hyper-parameters? First of all, as explained, my guider first gave me the "assignment" with NN in mind. It turned out that, neither NN nor other ML algorithms does not work out of the box, and each have some number of "hyper-parameters" that need to be chosen and tuned based on trial and error and domain knowledge. The reason it is called "hyper" is because the word parameters mean, in NN context, the weight and biases of the neurons. So the word "hyper" is added to avoid the obvious confusion. The rest of this subsection will assume prior knowledge on NN from the reader. \\
+
+As i started from basic Keras tutorials, mostly on famous MNIST\footnote{http://yann.lecun.com/exdb/mnist/} dataset, and then some my own randomly generated ones; i started to see how the basic structure of our NN would look like. After some re-factoring and modularizing of the code (even made my own ml\_lib.py), I could easily change the hyper-parameters and rerun experiments; saving log files of them and inspect the log files by hand to see at what points I was on the right track. \\
+
+While hyper-parameters like learning rate, batch size and regularizations were self-explanatory, the 2 biggest problem near the end of the project was (1) the loss function and (2) the fact that results stops improving only after 3-4 epochs. Spoiler here, both of these stayed unsolved; tough the end product still gave very good results.\\
+
+Before elaborating, let me mention that, even tough almost all of their input fields was identical, we decided to run car insurance and kasko insurance on different NNs. The reason was intuitive; while after all we expected NN to find correlations between input values and their outputs "in real world", the motivation for people getting car insurance and kasko insurance are completely different; so some patterns may hold up for one and does not for other. \\ 
+
+After this fact, because we did not only had the information that whether a given policy did car accident but also how much these accidents cost; our first implementation was a regression NN. We used Mean Squared Error as loss functions, tough other candidates were not that strong anyway. \\ 
+
+Near the end of the project, as explained before it occurred to me that, wasn't it a lot more "spoiled" to expect for NN to find correlations between input and cost, rather than input and whether the car did any accident? Because it was definitely the case that the set of real world variables that controls the cost of such accident encloses the set of real world variables that controls whether the accident occurred at all. For this reason, i decided to give classification a chance. Reformatted our data and code to reflect the occurrence of an accident rather the cost of it, and re-run the neural network using Cross Categorical Entropy as loss function; and in the final product classification gave a lot better results. Prior to that, we also did used another classification approach where we grouped the policies prior to feeding in to NN and tried to teach NN which "prior group" a policy belonged to, like good old "cat,god,house,skyscraper.." classification. That approach failed miserably.\\
+
+But, even tough the new found classification had good results, the problem persisted. I tough that the reason for NN to converge too soon in terms of epoch numbers was that the loss function we used was not really realistic. The model we were trying to fit was just too wild, with too much "noise" in the data, and maybe not even a "proper" underlying target function. It was at this point that i realized, what we were expecting from NN was unclear. Did we expect for it to give a correct answer for each single policy? Certainly not; maybe for a particular policy, NN DID predict the output correctly, just the real life did not had a chance to "catch up"? Like maybe policy X did really had high risk, and should have made some costly accidents, but did not by chance?\\
+
+For this reason i devised three metrics to be able to "observer and rate" the performance of our NNs. The first of these was the "eğim graphic" that we will see in the next section. For now, the basic idea is that we arrange the real life policies by their predicted outputs from NN and try to maximize the fit of a such line(in short we are trying to maximize the slope of some line on a graphic). That looked like a good plan. For different set of hyper-parameters, we would not judge the success by some iteration of all policies, but overall behaviour of the prediction when contrasted with real-life, trough this line. I know this does not look like a bright explanation for why this is a good idea, but none of the explanations i had trough out the intern-ship was brighter than some short-sighted intuition, so bear with me. \\
+ 
+So after this it was only natural for me to decide to "understand" the output in groups. It was also the case that current implementations of the target problem was in such nature anyway; the biggest customer of the Ada Yazılım made pricing by producing a risk group for each policy to determine a base price for the policy. Our aim was to replace such systems anyway, so we could say "use our grouping instead, it is using Artificial Intelligence!". So i, "somehow", divided the output set in to 13 "risk groups". While at first i tried to do some "bell curving" to determine cut of points for grouping; it turned out an evenly spaced grouping worked best for all purposes. \\
+
+This led to the second most metric after the mentioned slope: how smooth does the average cost increase from risk group 1 to 13. We, after NN "grouped" the policies, expect for n+1'th group to have bigger average cost than n'th. \\
+
+And for the third metric; we expected the NN to place some minimum number of policies in each group. It also turned out that this distribution should be close to normal distribution, which then by sheer luck our NN turned out to be doing exactly that. And that was surprising, because while in early experiments the number-of-policies-per-risk-group was almost smoothly decreasing; after some point we simply noticed that we were getting bell curves. Even tough i am not sure about the exact time of change, i believe it was around the point where i decided to bias policies with cost bigger than zero while forming my training set. This approach also turned out to be much better when tried on final prototypes. I of course did not used any such bias for test and validation sets. The reason for this design choice was to prevent the NN from thinking that policies with positive cost was simply "noise"; as the crushing majority of the data-set, as explained, was zero cost. Also, the results was simply better this was. \\
+
+So, after setting these 3 important metrics, i begin testing. But as i explained, the result was simply converging too early. I figured that the reason was that we were not reflecting these metrics to training phase. So i decided to write my own custom loss function, which turned out to be really problematic because I could not use the python's (important)numpy library inside "Tensor operations of Keras library". In other words, my only option was to write my own C++ shared library and incorporated it in to Keras library. The idea was to somehow express the previously mentioned "slope" in mathematical terms and subtract the current slope from the best possible slope(where all policies are arranged in strictly ascending order). Even tough i could not implement this decision, i doubt that it would have worked, as the loss functions used in NN world seems to be not THAT dependent on problem domain.\\
+
+Long story short, again we had design, implementation and testing going parallel and hand to hand. For the last two subsection, i tried to made sense to the way the project gone; with constant changing of ideas and lack of background information; tough at the end we had fantastic result for such an amateur and uneducated work, which i will display in the next subsection.\\
+
+For the sake of completeness, Table 1 shows the final hyper-parameters we used in prototypes. Also figure 6 to 9 shows the screen-shots(SS) of my code. Respectively, the SS of the script that i wrote to gather and extract needed data from company data-base, the SS of my script which normalizes the said data as discussed, the SS of my own machine learning library which only really includes many helper functions and finally the code for the NN itself. Full codes are available upon request.
+
+\subsubsection{TESTING PHASE} \label{testing}
+
+Even tough the whole implementation was also parallel with testing, i will use this subsection to display the end result of the whole intern-ship. At the end, we had 2 different approaches and 2 different insurance domains, making 4 categories for total. So for each category, we will share some graphics and some information in this section, about the output of the final NN we reached and decided which was good enough to actually present to customers.
+
+\textbf{How to read the graphics:} \\
+
+As explained we after all that stuff had 4 different "prototypes". Those were: KASKO insurance with classification approach, KASKO insurance with regression approach, car insurance with classification approach and car insurance with regression approach. For each prototype, we will show you 4 graphics, tough two of them will contain the same information. Here is how to read each graphic:\\
+
+$\bullet$ Two of these graphics, one is a line and the other is a bar graphics and we will denote both of them "hasar", shows the actual success of the neural network in a tangible way. It also compares the NN approach with the currently used approach, which is denoted by either "ASW Marka" or "current". In this graphics, horizontal line shows the "risk group". For classifications, the vertical line shows "what percentage of policies in this group actually had accident". For regressions, the vertical line shows how much cost policies in that grouped actually cost, averaged. While the former is a percentage, latter does not really have a unit and should instead be treated by inspecting how much the "average cost" changes between risk groups. Finally, the reason we used 13 risk groups is to make a better contrast with the currently used approach, which also use 13 groups. So that number is actually arbitrary.\\
+
+$\bullet$ Our second type of graphics is what we donate as "eğim" graphics. In this type, the horizontal line is "arrangement/ranking" and the vertical line is "cost" for regression and "probability of car accident" in classification. The scattered blue points are actual policies and shows how each policy actually end up behaving. The red line is the fit of these scattered blue points. Black line on the other hand shows the prediction of the NN.\\ The important point here is that the scattered blue points and therefore the red line is "arranged" by NN, according to it's prediction. So, a bad prediction would give us a red line almost parallel to x-axis and the scatter points would be almost random, while the best prediction would scatter blue points in ascending order and would give the maximum slope for the red line. The red-line is here just to see how much random and how much ascending the scatter points have been arranged. While showing the graphics, we will both give the slope of the red line and also the best possible slope for that particular case.\\
+
+$\bullet$ Lastly our third type of graphics is denoted as "adet" graphics. In this type, the horizontal axis is the risk group, and the vertical axis shows how many policy has been put in to that group. Again the red line is the NN approach while the blue line is the currently used approach. The important point here is that, we actually expect this graphic to show a normal distributions. We would, by common sense, expect most people to drive "standard", and some lesser of them to too dangerous or too safe.\\\\
+Now the graphics. \\\\
+\textbf{Classification With Kasko}\\\\
+Summary: \\\\
+Average prediction for policies which did not make accident in real life: $0.5956$ \\
+Average prediction for policies which did make accident in real life: $0.5698$ \\\\
+Percentage of real accident per risk group: $[8.33, 8.18, 11.17, 13.72, 14.02,$\\$ 18.42, 20.65, 22.15, 23.19, 25.18, 24.52, 25.60, 28.37]$ \\\\
+Same information as change: $[8.3333, -0.1461, +2.9868, +2.5484, +0.3072, +4.3950, +2.2342,$\\$ +1.5007, +1.0365, +1.9844, -0.6537, +1.0773, +2.7739]$ \\\\
+Number of policies for each risk group: $[168, 342, 707, 1902, 5189, 9205,$\\$ 13505, 15131, 13459, 9265, 4652, 1820, 370]$ \\\\
+Min prediction: $0.2859$, Max prediction: $0.8475$, Variance: $0.5616$ \\\\
+Slope of the "eğim" graph: $1.4925 e^{-6}$ \\
+Maximum possible slope:  $1.3277 e^{-5}$ \\\\
+Figures 11 to 14.\\\\
+\textbf{Regression With Kasko}\\\\
+Summary: \\\\
+Average prediction for policies which did not make accident in real life: $0.0141$ \\
+Average prediction for policies which did make accident in real life: $0.0146$ \\\\
+Total cost predicted is $\%97$ of the real cost. \\\\
+Average real cost per risk group: $[0.8179, 0.9961, 1.1569, 1.2398, 1.3604, 1.5961,$\\$ 1.7976, 1.7383, 1.9306, 2.5108, 2.9577, 3.1177, 2.958]$ \\\\
+Same information as change: $[0.8179, +0.1781, +0.1607,+ 0.0828, +0.1206,+ 0.2356, +0.2015,$\\$ -0.0593, +0.1922,+ 0.5802, +0.4468, +0.1600, -0.1597]$ \\\\
+Number of policies for each risk group:  $[840, 5404, 8399, 9748, 11029,$\\$ 10606, 9545, 8050, 6229, 3642, 1550, 579, 94]$\\\\
+Min prediction: $0.0083$, Max prediction: $0.0237$, Variance: $0.0154$ \\\\
+Slope of the "eğim" graph: $1.8411 e^{-7}$ \\
+Maximum possible slope:  $1.1546 e^{-6}$ \\\\
+Figures 15 to 18.\\\\
+\textbf{Classification With Trafik} \\\\
+Summary: \\\\
+Average prediction for policies which did not make accident in real life: $-0.6177$ \\
+Average prediction for policies which did make accident in real life: $-0.4546$ \\\\
+Percentage of real accident per risk group:\\ $[2.1505, 5.3386, 7.1733, 8.5751, 11.3177,$\\$ 14.8259, 18.8599, 22.8470, 26.9408, 32.4113, 41.4263, 49.7757, 80.2588]$ \\\\
+Same information as change: $[2.1505,+3.1881, +1.8346, +1.4018, +2.7425, +3.5082,$\\$ +4.0340, +3.9870, +4.0938, +5.4705,+9.0149, +8.3494, +30.4831]$ \\\\
+Number of policies for each risk group:\\ $[93, 3765, 26278, 58028,73345, 68299, 61421,$\\$ 49630, 33065, 17463, 6520, 1784, 309]$ \\\\
+Min prediction: $-1.40$, Max prediction: $0.58$, Variance: $1.98$ \\\\
+Slope of the "eğim" graph: $6.5822 e^{-7}$ \\
+Maximum possible slope:  $2.0871 e^{-6}$ \\\\
+Figures 19 to 22.\\\\
+\textbf{Regression With Trafik}\\\\
+Summary: \\\\
+Average prediction for policies which did not make accident in real life: $0.0317$ \\
+Average prediction for policies which did make accident in real life: $0.0381$ \\\\
+Total cost predicted is $\%183$ of the real cost. \\\\
+Average real cost per risk group: $[0.5759, 0.6051, 0.6784, 0.8039, 1.1493, 1.4148,$\\$ 1.8046, 2.1572, 2.7147, 3.2717, 4.6504, 7.7987, 9.8101]$ \\\\
+Same information as change: $[+0.5759, +0.02916, +0.07330, +0.1254, +0.3454, +0.2655, +0.3897,$\\$ +0.3526, +0.5574, +0.5570, +1.3786, +3.1483, +2.0113]$ \\\\
+Number of policies for each risk group: $[4493, 22030, 49055, 69746, 67107, 58603,$\\$ 49918, 37350, 23469, 12353, 4833, 843, 200]$\\\\
+Min prediction: $0.0077$, Max prediction: $0.0726$, Variance: $0.0649$ \\\\
+Slope of the "eğim" graph: $6.3402 e^{-8}$ \\
+Maximum possible slope:  $2.4420 e^{-7}$ \\\\
+Figures 23 to 26.\\\\
+\section{ORGANIZATION} \label{organization}
+
+Ada Yazılım is a software company first founded in mid 90's by Fikret and Fulya Uluğ. It's first product was automation software for insurance agencies. Since then, they produced 6 distinct software product. Ada Yazılım currently holds the largest market share for insurance agency software, and currently their main product is "Ada Şirket 4" or "Ada Portal", which is a software package/automation for insurance companies themselves(not agencies).
+
+\subsection{ORGANIZATION AND STRUCTURE} \label{structure}
+
+The company is a rather small, family company with 2 offices in Istanbul. Ada Yazılım has around 10-14 computer engineers at a given time, where most of them work on Ada Portal at a given time. Most of the engineer team works at Yıldız Technical University Technopark Office.\\
+
+ There is no hierarchical structure in the company, expect Ali Uluğ, my intern-ship guider is the head of engineering team. The main office also holds around 4-5 service personal, which they give real-time customer service to customers, and some other personal which runs the accounting and marketing, around 1-2 personal for each. 
+
+
+
+
+\subsection{METHODOLOGIES AND STRATEGIES USED IN THE COMPANY} \label{strategies}
+
+Even tough a small company, Ada Yazılım has a very energetic team. Learning new best practices and know-hows is the top priority during a regular work day. What they lack in marketing they make up for by very strict software engineering principles and well working code. Even tough the company lack innovation at this phase due to heavy work load of the currently maintained product, and never ending customer requests; Ada Yazılım is always on the look out for what part of their code base they can implement better, safer and faster. \\ For such reasons, as i will conclude in the next section, the most enjoyable part of working with Ada is witnessing the never ending need for well educated decision making during each line of implementation and design, to ad infinitum.
+
+
+\section{CONCLUSION} \label{conclusion}
+
+The first part of my intern-ship, Ada Portal, tough me to always be careful while writing production code; there are tenfold of best practices, company standards, and performance-maintainability trade off. It was my first time writing production code and trying to use boring but powerful company libraries in right way.\\
+
+The second part was definitely the most fun and en-lighting. My guider, also the boss, and my cousin, simply "started" the project as; "We have lots of data, there is this thing called Neural Network which make predictions out of data, go figure". Not that i am doing any criticism, it was a new and important know-how for the whole company, and my guider gave the best possible insight and help for the project, which i am proud that we at the end had a tangible, working prototype that actually have correct predictions. The part of the project that i invested all my time in research instead of coding gave me great insight about the current state and importance of Machine Learning on solving problems well beyond human mind's capabilities, and also the fact that we are still way too far away from replicating any functionality of the brain as it is implemented in brain itself. At least we, as humanity, seem to kick started the phase where we try to write algorithms which themselves implement algorithms, instead of writing those algorithms directly. \\
+
+
+\section{APPENDICES} \label{apendis}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{portal-anasayfa.png}
+\caption{Main Page of Ada Portal}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{ekran1.png}
+\caption{Screen for Role-Menu-Access}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{ekran2.png}
+\caption{Screen For Role Logs}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{ekran3.png}
+\caption{User Information Screen}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{ekran4.png}
+\caption{Screen for User Logs}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.36]{kumul.png}
+\caption{Code For the Database Crawler}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.36]{normal.png}
+\caption{Code For my Data Normalization Script}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.36]{lib.png}
+\caption{Code For my ML Library}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.36]{nnanaliz.png}
+\caption{Code For the Neural Network}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.36]{kneig.png}
+\caption{Code For the K-Neighbour}
+\end{figure}
+
+
+
+
+
+%graphics start here
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.37]{cat-kasko/cat-kasko.png}
+\caption{Classification Kasko Hasar}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{cat-kasko/cat-kasko-bar.png}
+\caption{Classification Kasko Hasar Bar}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{cat-kasko/cat-kasko-egim.png}
+\caption{Classification Kasko Eğim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{cat-kasko/cat-kasko-adet.png}
+\caption{Classification Kasko Adet}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{reg-kasko/reg-kasko.jpg}
+\caption{Regression Kasko Hasar}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{reg-kasko/reg-kasko-bar.png}
+\caption{Regression Kasko Hasar Bar}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{reg-kasko/reg-kasko-egim.png}
+\includegraphics[scale=0.4]{reg-kasko/reg-kasko-egim(2).png}
+\caption{Regression Kasko Eğim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{reg-kasko/reg-kasko-adet.png}
+\caption{Regression Kasko Hasar Adet}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{cat-trafik/cat-trafik-new.png}
+\caption{Classification Trafik Hasar}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{cat-trafik/cat-trafik-bar-new.png}
+\caption{Classification Trafik Hasar Bar}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{cat-trafik/cat-trafik-egim-new.png}
+\caption{Classification Trafik Eğim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{cat-trafik/cat-trafik-adet-new.png}
+\caption{Classification Trafik Adet}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{reg-trafik/reg-trafik.jpg}
+\caption{Regression Trafik Hasar}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{reg-trafik/reg-trafik-bar.png}
+\caption{Regression Trafik Hasar Bar}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{reg-trafik/reg-trafik-egim.png}
+\includegraphics[scale=0.3]{reg-trafik/reg-trafik-egim.jpg}
+\caption{Regression Trafik Eğim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{reg-trafik/reg-trafik-adet.png}
+\caption{Regression Trafik Adet}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{ekran5.png}
+\caption{Ada Yazılım Products}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Hyper Parameters}
+\label{my-label}
+\begin{tabular}{lll}
+                       & Regression          & Classification             \\
+Loss Function          & Mean Squared Error  & Categorical Cross Entrophy \\
+Epochs                 & 4                   & 3                          \\
+Learning Rate          & 0.001               & 0.001                      \\
+Decay                  & 0.00025             & 0.00025                    \\
+Momentum               & 0.1                 & -                          \\
+Batch Size             & 100                 & 100                        \\
+Optimizer              & ADAM                & SGD                        \\
+Regularization Rate    & 0.001               & 0.01                       \\
+Regularizer            & l2                  & l2                         \\
+Topology               & Single Hidden Layer & Single Hidden Layer        \\
+Neuron in hidden layer & 1000                & 1000                       \\
+Act. Func.             & ReLU                & ReLU                      
+\end{tabular}
+\end{table}
+
+
+
+\end{document}

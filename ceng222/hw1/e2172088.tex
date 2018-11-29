@@ -1,0 +1,208 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+
+%misc libraries goes here
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+\begin{document}
+
+\noindent
+\HRule \\[3mm]
+\begin{flushright}
+
+                                         \LARGE \textbf{CENG 222}  \\[4mm]
+                                         \Large Statistical Methods for Computer Engineering \\[4mm]
+                                        \normalsize      Spring '2017-2018 \\
+                                           \Large   Take Home Exam 1 \\
+                    \normalsize Deadline: May 25, 23:59 \\
+                    \normalsize Submission: via COW
+\end{flushright}
+\HRule
+
+\section*{Student Information }
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Deniz Rasim Uluğ \\
+Id Number : 2172088 \\
+
+% Write your answers below the section tags
+\section*{Answer 3.8}
+
+It is given that the random variable $X=\{$ Number of failures before first success$\}$.\\\\
+Let another random variable be defined as $Y_{n} = \{$ First trial succeeds out of n trials$\}$. \\\\
+
+Since there are only four possible passwords we can't have $4$ failures before success. Therefore we can enumerate all probabilities for $X$. Also notice that, very obviously,
+\begin{center}
+$P(Y_n) = 1/n$
+\end{center}
+
+Then,\\
+\begin{frame}
+
+$P(X=0) = P( \{$First trail succeeds$\} ) = P(Y_4) = 1/4$\\
+$P(X=1) = P( \{$First trail fails$\} \cap \{$Second trial succeeds$\} ) = (1-P(Y_4)).P(Y_3) =\frac{3}{4} \cdot \frac{1}{4} = 1/4$\\
+$P(X=2) =  (1-P(Y_4)).(1-P(Y_3)).P(Y_2) = 1/4$\\
+$P(X=3) = (1-P(Y_4)).(1-P(Y_3)).(1-P(Y_2)).P(Y_1) = P(Y_4) = 1/4$\\
+$P(X=4) = P( \{$All passwords are wrong$\} ) = 0$
+\end{frame}\\
+Then we can find the Expectancy with
+
+\begin{center}
+$E(X)=\sum_{i=0}^4 P(X=i).i$
+\end{center}
+Then,
+\begin{center}
+$E(X)=0.\frac{1}{4}+1.\frac{1}{4}+2.\frac{1}{4}+3.\frac{1}{4}+0=3/2$
+\end{center}
+And variance,
+\begin{center}
+$Var(X)=\sum_{i=0}^4(i-E(X))^2.P(X=i)$
+\end{center}
+\begin{center}
+$Var(X)=\frac{3}{2}^2.\frac{1}{4}+\frac{1}{2}^2.\frac{1}{4}+\frac{1}{2}^2.\frac{1}{4}+\frac{3}{2}^2.\frac{1}{4}+0=5/4$
+\end{center}
+
+
+
+
+\section*{Answer 3.15}
+a) We can see that the set of events $\{$At least one hardware failure$\}$ is the same as $\neg \{$No hardware failure$\}$. Consequently, by Complement Rule,
+\begin{center}
+$P(\{$At least one hardware failure$\} )=1-P(\neg\{$At least one hardware failure$\} )$\\$=1-P( \{$No hardware failure$\})$
+\end{center}
+Then,
+\begin{center}
+$P(\{$At least one hardware failure$\} )=1-P_{x,y}(0,0)=1-0.52=0.48$
+\end{center}
+b) We now that for two events to be independent, their joint distribution should factor in to their individual distribution. By summing the relevant entries in the given table, we can see that:\\\\
+\begin{frame}
+
+$P_x(0)=0.72$\\
+$P_y(0)=0.76$\\\\
+\end{frame}
+Then since;\\\\
+\begin{frame}
+
+$P_{x,y}(0,0)=0.52 \neq P_x(0).P_y(0)=0.5472$\\\\
+\end{frame}
+We see that $X$ and $Y$ are not independent.
+
+\section*{Answer 3.19}
+
+a) Define the random variable $A=100X$. Then,\\\\
+\begin{frame}
+
+$E(A)=100E(X)=100(2.\frac{1}{2} - 2\frac{1}{2})=0$\\\\
+$Var(A)=100^2Var(X)=100^2( 4.\frac{1}{2}+4.\frac{1}{2} ) =4.100^2$\\\\\\
+\end{frame}
+b) Define the random variable $B=100Y$. Then,\\\\
+\begin{frame}
+
+$E(A)=100E(Y)=100(4.\frac{2}{10} - 1\frac{8}{10})=0$\\\\
+$Var(A)=100^2Var(Y)=100^2( 16.\frac{2}{10}+1.\frac{8}{10} )=4.100^2$\\\\\\
+\end{frame}
+c) Define the random variable $C=50X+50Y$. Remember that for independent events\\
+\begin{center}
+$Var(aX+bY)=a^2Var(X)+b^2Var(Y)$\\
+\end{center}
+Then,\\\\
+\begin{frame}
+
+$E(C)=50E(X)+50E(Y)=0$\\\\
+$Var(C)=50^2Var(X)+50^2Var(Y)=50^2( 4.\frac{1}{2}+4.\frac{1}{2} )+50^2( 16.\frac{2}{10}+1.\frac{8}{10} )$\\
+$=2.50.50.4=8.50^2=2.100^2$\\\\
+\end{frame}
+We see that, as was expected, the total risk (AKA variance) has also fallen when we "diversified the portfolio".
+
+
+
+\section*{Answer 3.29}
+
+
+We are looking for:
+\begin{center}
+$P( \{$Eric is high risk$\} | \{$Eric made 0 accidents$\})=$\\
+$P( \{$Eric made 0 accidents$\} | \{$Eric is high risk$\}).P(\{$Eric is high risk$\}) / P(\{$Eric made 0 accidents$\})   $\\
+\end{center}
+
+Let's calculate each term one by one.\\
+
+a)$P( \{$Eric made 0 accidents$\} | \{$Eric is high risk$\})$\\
+
+Given that Eric is high risk, we can fit the probabilty that he makes 0 accident to a possion disturbution with $\lambda=1$, since high risk customers makes on average $1$ accident per year.
+
+Than, for A={ number of accidents };
+\begin{center}
+$P(A=0)=e^{-1}.\frac{1}{1}$ (By poisson formula)\\
+\end{center}
+
+
+b)$P(\{$Eric is high risk$\}) $\\
+
+Since 20 percent of customers is high-risk, we can take this probabilty to be $\frac{2}{10}$\\
+
+
+c)$P(\{$Eric made 0 accidents$\})$\\
+
+We can open this expression as:\\
+
+\begin{frame}
+
+$ P(\{$Eric made 0 accidents$\}) $\\
+$=  P(   \{$Eric made 0 accidents$\}  \cap \{$Eric is high risk$\}     )   +   P(\{   $Eric made 0 accidents$\} \cap \{$Eric is low risk$\}     )$\\
+$=  P(   \{$Eric made 0 accidents$\}  | \{$Eric is high risk$\}     ) .P(\{$Eric is high risk$\})   +   P(\{   $Eric made 0 accidents$\} |\{$Eric is low risk$\}     ) . P(\{$Eric is low risk$\})   $\\\\
+\end{frame}
+
+Out of the 4 final terms, we only need to find the third one. This probabilty fits, again, in to a poisson disturbution with $\lambda=0.1$. \\
+Then for $X=${Number of accidents};
+\begin{center}
+$P(X=0)=e^{-0.1}.\frac{1}{1}$\\
+\end{center}
+
+Putting it together, we have;
+\begin{center}
+$P(\{$Eric made 0 accidents$\})=e^{-1}\frac{8}{10}+e^{-0.1}\frac{2}{10}$\\
+\end{center}
+
+Finally, putting it ALL back together;\\
+\begin{center}
+$P( \{$Eric is high risk$\} | \{$Eric made 0 accidents$\})$\\
+$=0.2e^{-1}/( e^{-1}\frac{8}{10}+e^{-0.1}\frac{2}{10} )$
+$=0.0923$
+\end{center}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

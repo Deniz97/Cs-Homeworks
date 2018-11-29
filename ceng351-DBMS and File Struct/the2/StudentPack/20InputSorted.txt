@@ -1,0 +1,20 @@
+0|MacBook|Metal|Space Gray
+1|Ball|Glass|Space Gray
+2|iPhone|Plastic|Space Gray
+3|Car|Silicon|White
+4|Book|Glass|White
+5|Barbie|Plastic|Red
+6|iPad|Plastic|Tornado Red
+7|Barbie|Wooden|Blue
+8|MacBook|Plastic|Green
+9|He-Man|Wooden|Tornado Red
+10|iPad|Glass|Space Gray
+11|He-Man|Silicon|Rose Gold
+12|He-Man|Plastic|Red
+13|Book|Plastic|Rose Gold
+14|iPad|Wooden|Space Gray
+15|MacBook|Plastic|White
+16|Ball|Metal|Tornado Red
+17|Book|Wooden|Tornado Red
+18|iPad|Silicon|White
+19|Barbie|Plastic|Tornado Red
