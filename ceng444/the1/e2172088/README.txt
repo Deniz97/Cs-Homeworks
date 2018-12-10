@@ -15,7 +15,7 @@ My homework consist of three parts:
 	$python main.py inputs/inp1.txt
 
 	Use test.py to see my own examples containing errors. test.py only contains errors which I have manually handled to print a semantic error, plus some lexical errors.
-	$test.py
+	$python test.py
 
 	Well formed programs are in directory 'inputs', and their outputs are in the directory 'outputs'. The inputs to the programs, when one requires, is given 10.
 
